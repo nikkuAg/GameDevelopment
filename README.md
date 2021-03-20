@@ -11,5 +11,3 @@ In the starting you a short story line for the game.
 
 The link for the trailer of the Game is: https://youtu.be/V-GcpFdjpcg
 
-
-Enjoy Playing!!!
