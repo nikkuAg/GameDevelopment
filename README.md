@@ -1,5 +1,6 @@
 # GameDevelopment
 A Sea World Treasure Hunt
+Only available on Windows
 
 This game is Treasure Hunt game. Name of the game is A DOT.(A Desire Of Treasure) which is made using the GODOT Game Engine.
 
