@@ -1,0 +1,689 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://Fonts/pixel-takhisis-font/PixelTakhisis-ZajJ.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Stalinist_One/StalinistOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Characters/Sea Horse/Trident.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Sea Horse/Red_CP.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Music and Sounds/Shop.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Fonts/Courgette/Courgette-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Characters/Sea Horse/Sword2.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Armor.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/store.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/ShopLabel.gd" type="Script" id=10]
+[ext_resource path="res://Fonts/Audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Scenes/ChangeSceneButton.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Characters/Sea Horse/Black_CP.png" type="Texture" id=13]
+[ext_resource path="res://Scripts/Weapons.gd" type="Script" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 1, 0, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0.501961, 0.0313726, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.788235, 0.639216, 0.0588235, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.513726, 0.219608, 0.219608, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.968627, 1, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.168627, 0.52549, 0.509804, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="Theme" id=7]
+TabContainer/colors/font_color_bg = Color( 0, 0, 0, 1 )
+TabContainer/colors/font_color_disabled = Color( 0.901961, 0.901961, 0.901961, 0 )
+TabContainer/colors/font_color_fg = Color( 0, 0, 0, 1 )
+TabContainer/constants/hseparation = 4
+TabContainer/constants/label_valign_bg = 2
+TabContainer/constants/label_valign_fg = 0
+TabContainer/constants/side_margin = 8
+TabContainer/constants/top_margin = 24
+TabContainer/fonts/font = SubResource( 3 )
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_highlight = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_highlight = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = SubResource( 4 )
+TabContainer/styles/tab_bg = SubResource( 5 )
+TabContainer/styles/tab_disabled = null
+TabContainer/styles/tab_fg = SubResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 1, 1, 1 )
+
+[sub_resource type="Theme" id=9]
+Panel/styles/panel = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 15
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 12
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0, 1, 1, 1 )
+
+[sub_resource type="Theme" id=14]
+Panel/styles/panel = SubResource( 13 )
+
+[sub_resource type="DynamicFont" id=15]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=16]
+font_data = ExtResource( 6 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 619.953, 64.0712 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.368627, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -87.0
+margin_top = 5.0
+margin_right = -7.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = -17.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 2 )
+text = "STORE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeScene" parent="." instance=ExtResource( 12 )]
+margin_left = 1.73865
+margin_top = 1.31821
+margin_right = 61.7386
+margin_bottom = 28.3182
+text = "Close"
+scene = "res://Scenes/LevelOverlay/Level2.tscn"
+reset_score = false
+reset_global_score = false
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 29.0
+margin_right = -3.0
+margin_bottom = -4.0
+theme = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Armor" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 40.0
+margin_right = -5.0
+margin_bottom = -5.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Armor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Node2D" parent="TabContainer/Armor/RichTextLabel"]
+
+[node name="Panel1" type="Panel" parent="TabContainer/Armor/RichTextLabel/Control"]
+margin_left = 4.0
+margin_right = 96.0
+margin_bottom = 85.0
+theme = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Default" type="Label" parent="TabContainer/Armor/RichTextLabel/Control/Panel1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -29.0
+margin_top = -17.5
+margin_right = 31.0
+margin_bottom = 8.5
+custom_fonts/font = SubResource( 10 )
+text = "Default"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="TabContainer/Armor/RichTextLabel/Control/Panel1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -36.5
+margin_top = -29.0
+margin_right = 36.5
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 11 )
+text = "Buy"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Armor/RichTextLabel/Control/Panel1"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 46.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+price = 0
+
+[node name="Label2" type="Label" parent="TabContainer/Armor/RichTextLabel/Control/Panel1"]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 46.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Price :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="TabContainer/Armor/RichTextLabel/Control"]
+margin_left = 105.0
+margin_right = 197.0
+margin_bottom = 85.0
+theme = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="TabContainer/Armor/RichTextLabel/Control/Panel2"]
+position = Vector2( 43.7848, 32.6307 )
+scale = Vector2( 0.5348, 0.477987 )
+texture = ExtResource( 13 )
+
+[node name="Button" type="Button" parent="TabContainer/Armor/RichTextLabel/Control/Panel2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -36.5
+margin_top = -29.0
+margin_right = 37.5
+margin_bottom = -3.00001
+custom_fonts/font = SubResource( 11 )
+text = "Buy"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Armor/RichTextLabel/Control/Panel2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 4.0
+margin_top = 7.0
+margin_right = 44.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+price = 20
+
+[node name="Label2" type="Label" parent="TabContainer/Armor/RichTextLabel/Control/Panel2"]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 46.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Price :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="TabContainer/Armor/RichTextLabel/Control"]
+margin_left = 206.0
+margin_right = 298.0
+margin_bottom = 85.0
+theme = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="TabContainer/Armor/RichTextLabel/Control/Panel3"]
+position = Vector2( 43.785, 32.631 )
+scale = Vector2( 0.535, 0.478 )
+texture = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="TabContainer/Armor/RichTextLabel/Control/Panel3"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -36.5
+margin_top = -29.0
+margin_right = 31.5
+margin_bottom = -3.00001
+custom_fonts/font = SubResource( 11 )
+text = "Buy"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Armor/RichTextLabel/Control/Panel3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 4.0
+margin_top = 7.0
+margin_right = 44.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+price = 55
+
+[node name="Label2" type="Label" parent="TabContainer/Armor/RichTextLabel/Control/Panel3"]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 46.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Price :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Armor"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -12.0
+max_value = 135.0
+page = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="TabContainer/Armor"]
+visible = false
+margin_left = 63.0
+margin_top = -69.0
+margin_right = 245.0
+margin_bottom = 60.0
+color = Color( 1, 0, 0, 0.729412 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Armor/ColorRect"]
+anchor_right = 1.0
+margin_top = 26.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="TabContainer/Armor/ColorRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -31.0
+margin_top = -36.0
+margin_right = 26.0
+margin_bottom = -16.0
+text = "Ok"
+
+[node name="Weapons" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 40.0
+margin_right = -5.0
+margin_bottom = -5.0
+script = ExtResource( 15 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Weapons"]
+anchor_right = 7.55
+anchor_bottom = 4.25
+margin_bottom = 7.62939e-06
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Node2D" parent="TabContainer/Weapons/RichTextLabel"]
+
+[node name="Panel1" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+margin_left = 4.0
+margin_right = 96.0
+margin_bottom = 85.0
+theme = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Default" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.0
+margin_top = -13.0
+margin_right = 25.0
+margin_bottom = 1.0
+custom_fonts/font = SubResource( 16 )
+text = "Default"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -36.5
+margin_top = -29.0
+margin_right = 36.5
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 11 )
+text = "Buy"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 46.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+price = 0
+
+[node name="Label2" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 46.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Price :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+margin_left = 105.0
+margin_top = 1.0
+margin_right = 197.0
+margin_bottom = 86.0
+theme = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
+position = Vector2( 45.6395, 36.2194 )
+rotation = 1.5708
+scale = Vector2( 0.156763, 0.218925 )
+texture = ExtResource( 7 )
+
+[node name="Button" type="Button" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -36.5
+margin_top = -29.0
+margin_right = 35.5
+margin_bottom = -3.00001
+custom_fonts/font = SubResource( 11 )
+text = "Buy"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 4.0
+margin_top = 7.0
+margin_right = 44.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+price = 30
+
+[node name="Label2" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 46.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Price :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+margin_left = 206.0
+margin_top = 1.0
+margin_right = 298.0
+margin_bottom = 86.0
+theme = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
+position = Vector2( 44.6579, 37.3415 )
+rotation = 1.5708
+scale = Vector2( 0.329378, 0.332347 )
+texture = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -36.5
+margin_top = -29.0
+margin_right = 35.5
+margin_bottom = -3.00001
+custom_fonts/font = SubResource( 11 )
+text = "Buy"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 4.0
+margin_top = 7.0
+margin_right = 44.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+price = 60
+
+[node name="Label2" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 46.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Price :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="TabContainer/Weapons"]
+visible = false
+margin_left = 63.0
+margin_top = -69.0
+margin_right = 245.0
+margin_bottom = 60.0
+color = Color( 1, 0, 0, 0.729412 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/ColorRect"]
+anchor_right = 1.0
+margin_top = 26.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="TabContainer/Weapons/ColorRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -31.0
+margin_top = -36.0
+margin_right = 26.0
+margin_bottom = -16.0
+text = "Ok"
+
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Weapons"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -12.0
+step = 100.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -6.217
+autoplay = true
+[connection signal="button_up" from="TabContainer/Armor/RichTextLabel/Control/Panel1/Button" to="TabContainer/Armor" method="_on_Button1_button_up"]
+[connection signal="button_up" from="TabContainer/Armor/RichTextLabel/Control/Panel2/Button" to="TabContainer/Armor" method="_on_Button2_button_up"]
+[connection signal="button_up" from="TabContainer/Armor/RichTextLabel/Control/Panel3/Button" to="TabContainer/Armor" method="_on_Button3_button_up"]
+[connection signal="button_up" from="TabContainer/Armor/ColorRect/Button" to="TabContainer/Armor" method="_on_Button_button_up"]
+[connection signal="button_up" from="TabContainer/Weapons/RichTextLabel/Control/Panel1/Button" to="TabContainer/Weapons" method="_on_Button1_button_up"]
+[connection signal="button_up" from="TabContainer/Weapons/RichTextLabel/Control/Panel2/Button" to="TabContainer/Weapons" method="_on_Button2_button_up"]
+[connection signal="button_up" from="TabContainer/Weapons/RichTextLabel/Control/Panel3/Button" to="TabContainer/Weapons" method="_on_Button3_button_up"]
+[connection signal="button_up" from="TabContainer/Weapons/ColorRect/Button" to="TabContainer/Weapons" method="_on_Button_button_up"]

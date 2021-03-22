@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/ChangeSceneButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/Special_Elite/SpecialElite-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+font_data = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 1, 0.454902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 1.0
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 1 )
+text = "Level 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeScene" parent="." instance=ExtResource( 1 )]
+margin_left = 196.219
+margin_top = 110.0
+margin_right = 272.219
+margin_bottom = 137.0
+
+[node name="ChangeScene2" parent="." instance=ExtResource( 1 )]
+margin_left = 44.001
+margin_top = 110.0
+margin_right = 120.001
+margin_bottom = 137.0

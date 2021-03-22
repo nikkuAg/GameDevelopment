@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Picture Scene/Scene6.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/Audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/PictureScene/Scene5.gd" type="Script" id=3]
+[ext_resource path="res://Characters/Fish/Fish3/1.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Music and Sounds/Dialog.ogg" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 13
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Scene5" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene = "res://Scenes/PictureScene/Level1E.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 3.33675
+margin_top = 3.16837
+margin_right = 46.3368
+margin_bottom = 43.1684
+texture = ExtResource( 4 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 49.0
+margin_top = 5.0
+margin_right = -3.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 1 )
+text = "Who are you and what do you want? You are treaspassing in our territory."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+margin_left = 78.0
+margin_top = 5.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 1 )
+text = "Just going by. Don't mind me!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+margin_left = 59.0
+margin_top = 5.0
+margin_right = 1.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 1 )
+text = "You can't. Defeat us if you really want to do so."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
+autoplay = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
