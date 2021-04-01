@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Characters/Corals/Obstacle/Obstacle2.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 8.83555
+height = 14.4193
+
+[node name="Coral1" type="StaticBody2D"]
+
+[node name="Bush" type="Sprite" parent="."]
+position = Vector2( 0, -9 )
+scale = Vector2( 0.349166, 0.357103 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.07872, -0.719728 )
+rotation = -1.5708
+shape = SubResource( 1 )

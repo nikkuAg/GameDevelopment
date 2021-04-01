@@ -1,0 +1,1201 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scenes/Characters/SeaHorse.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/Fish2N.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Background.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Corals/HealingCoral.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/WallTile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Characters/Fish3N.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Corals/Coral2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Characters/StarFish.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/portalH.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Corals/Coral1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Corals/Coral3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Corals/Weed.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Corals/Spikes.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Characters/Octopus.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Characters/Fish1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scripts/Levels.gd" type="Script" id=17]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource( 17 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallTile" parent="." instance=ExtResource( 5 )]
+tile_data = PoolIntArray( 0, 1, 4, 1, 1, 196609, 2, 1, 196609, 3, 1, 196609, 4, 1, 196609, 5, 1, 196609, 6, 1, 196609, 7, 1, 196609, 8, 1, 196609, 9, 1, 8, 10, 1, 196609, 11, 1, 196609, 12, 1, 196609, 13, 1, 196609, 14, 1, 196609, 15, 1, 196609, 16, 1, 196609, 17, 1, 196609, 18, 1, 196609, 19, 1, 196609, 20, 1, 196609, 21, 1, 196609, 22, 1, 196609, 23, 1, 196609, 24, 1, 196609, 25, 1, 196609, 26, 1, 196609, 27, 1, 196609, 28, 1, 196609, 29, 1, 196609, 30, 1, 196609, 31, 1, 196609, 32, 1, 8, 33, 1, 196609, 34, 1, 196609, 35, 1, 196609, 36, 1, 196609, 37, 1, 196609, 38, 1, 196609, 39, 1, 196609, 40, 1, 196609, 41, 1, 196609, 42, 1, 196609, 43, 1, 196609, 44, 1, 196609, 45, 1, 196609, 46, 1, 196609, 47, 1, 196609, 48, 1, 196609, 49, 1, 196609, 50, 1, 7, 65536, 1, 65539, 65545, 1, 65539, 65568, 1, 131075, 65586, 1, 65539, 131072, 1, 65539, 131081, 1, 65539, 131094, 1, 3, 131113, 1, 3, 131122, 1, 65539, 196608, 1, 65539, 196617, 1, 65539, 196620, 1, 3, 196625, 1, 4, 196626, 1, 196609, 196627, 1, 196609, 196628, 1, 196609, 196629, 1, 196609, 196630, 1, 196616, 196631, 1, 196609, 196632, 1, 196609, 196633, 1, 196609, 196634, 1, 196609, 196635, 1, 196609, 196636, 1, 196609, 196637, 1, 196609, 196638, 1, 196609, 196639, 1, 196609, 196640, 1, 196609, 196641, 1, 196609, 196642, 1, 196609, 196643, 1, 196609, 196644, 1, 196609, 196645, 1, 196609, 196646, 1, 196609, 196647, 1, 196609, 196648, 1, 196609, 196649, 1, 196616, 196650, 1, 196609, 196651, 1, 7, 196658, 1, 65539, 262144, 1, 65539, 262153, 1, 65539, 262156, 1, 65539, 262159, 1, 4, 262160, 1, 196609, 262161, 1, 262151, 262187, 1, 65539, 262190, 1, 3, 262194, 1, 65539, 327680, 1, 262148, 327681, 1, 196609, 327682, 1, 7, 327685, 1, 4, 327686, 1, 196609, 327687, 1, 196609, 327688, 1, 196609, 327689, 1, 196615, 327692, 1, 65539, 327695, 1, 65539, 327697, 1, 65539, 327723, 1, 65539, 327726, 1, 65539, 327730, 1, 65539, 393216, 1, 65539, 393218, 1, 65539, 393221, 1, 65539, 393228, 1, 65539, 393231, 1, 65539, 393233, 1, 65539, 393236, 1, 4, 393237, 1, 196609, 393238, 1, 196609, 393239, 1, 196609, 393240, 1, 196609, 393241, 1, 196609, 393242, 1, 196609, 393243, 1, 196609, 393244, 1, 196609, 393245, 1, 196609, 393246, 1, 196609, 393247, 1, 196609, 393248, 1, 196609, 393249, 1, 196609, 393250, 1, 196609, 393251, 1, 196609, 393252, 1, 196609, 393253, 1, 196609, 393254, 1, 196609, 393255, 1, 196609, 393256, 1, 7, 393259, 1, 65539, 393262, 1, 65539, 393266, 1, 65539, 458752, 1, 65539, 458754, 1, 65539, 458757, 1, 65539, 458763, 1, 4, 458764, 1, 196615, 458767, 1, 65539, 458769, 1, 65539, 458772, 1, 65539, 458792, 1, 65539, 458795, 1, 65539, 458798, 1, 65539, 458802, 1, 65539, 524288, 1, 65539, 524290, 1, 65539, 524293, 1, 65539, 524295, 1, 4, 524296, 1, 196609, 524297, 1, 196609, 524298, 1, 196609, 524299, 1, 196615, 524303, 1, 65539, 524305, 1, 65539, 524308, 1, 65539, 524328, 1, 65539, 524331, 1, 65539, 524334, 1, 65539, 524336, 1, 3, 524338, 1, 65539, 589824, 1, 65539, 589826, 1, 65539, 589829, 1, 65539, 589831, 1, 65539, 589839, 1, 65539, 589841, 1, 65539, 589844, 1, 65539, 589847, 1, 4, 589848, 1, 196609, 589849, 1, 196609, 589850, 1, 196609, 589851, 1, 196609, 589852, 1, 196609, 589853, 1, 196609, 589854, 1, 196609, 589855, 1, 196609, 589856, 1, 196609, 589857, 1, 196609, 589858, 1, 196609, 589859, 1, 196610, 589862, 1, 3, 589864, 1, 65539, 589867, 1, 65539, 589870, 1, 65539, 589872, 1, 65539, 589874, 1, 65539, 655360, 1, 65539, 655362, 1, 65539, 655365, 1, 65539, 655367, 1, 65539, 655370, 1, 0, 655371, 1, 1, 655372, 1, 2, 655375, 1, 65539, 655377, 1, 65539, 655380, 1, 65539, 655383, 1, 65539, 655398, 1, 65539, 655400, 1, 65539, 655403, 1, 65539, 655406, 1, 65539, 655408, 1, 65539, 655410, 1, 65539, 720896, 1, 65539, 720898, 1, 65539, 720901, 1, 65539, 720903, 1, 65539, 720906, 1, 131072, 720907, 1, 131073, 720908, 1, 131074, 720910, 1, 4, 720911, 1, 196615, 720913, 1, 65539, 720916, 1, 65539, 720919, 1, 65539, 720934, 1, 65539, 720936, 1, 65539, 720939, 1, 65539, 720942, 1, 65539, 720944, 1, 65539, 720946, 1, 65539, 786432, 1, 65539, 786434, 1, 65539, 786437, 1, 65539, 786439, 1, 65539, 786446, 1, 65539, 786449, 1, 65539, 786452, 1, 65539, 786454, 1, 4, 786455, 1, 196616, 786456, 1, 196609, 786457, 1, 196609, 786458, 1, 196609, 786459, 1, 196609, 786460, 1, 196609, 786461, 1, 196609, 786462, 1, 196609, 786463, 1, 196609, 786464, 1, 196609, 786465, 1, 196609, 786466, 1, 196609, 786467, 1, 196609, 786468, 1, 196609, 786469, 1, 196609, 786470, 1, 196616, 786471, 1, 196609, 786472, 1, 196615, 786475, 1, 65539, 786478, 1, 65539, 786480, 1, 65539, 786482, 1, 65539, 851968, 1, 65539, 851970, 1, 65539, 851973, 1, 65539, 851975, 1, 196612, 851976, 1, 196609, 851977, 1, 196609, 851978, 1, 196609, 851979, 1, 7, 851982, 1, 65539, 851985, 1, 65539, 851988, 1, 65539, 851990, 1, 65539, 852011, 1, 65539, 852014, 1, 65539, 852016, 1, 131075, 852018, 1, 65539, 917504, 1, 65539, 917506, 1, 65539, 917509, 1, 65539, 917515, 1, 65539, 917518, 1, 65539, 917521, 1, 65539, 917524, 1, 65539, 917526, 1, 65539, 917529, 1, 4, 917530, 1, 196609, 917531, 1, 196609, 917532, 1, 196609, 917533, 1, 196609, 917534, 1, 196609, 917535, 1, 196609, 917536, 1, 196609, 917537, 1, 196609, 917538, 1, 196609, 917539, 1, 196609, 917540, 1, 196609, 917541, 1, 196609, 917542, 1, 196609, 917543, 1, 196609, 917544, 1, 8, 917545, 1, 196609, 917546, 1, 196609, 917547, 1, 196615, 917550, 1, 65539, 917554, 1, 65539, 983040, 1, 65539, 983042, 1, 65539, 983045, 1, 65539, 983051, 1, 65539, 983054, 1, 65539, 983057, 1, 65539, 983060, 1, 65539, 983062, 1, 65539, 983065, 1, 65539, 983080, 1, 65539, 983086, 1, 65539, 983090, 1, 65539, 1048576, 1, 65539, 1048578, 1, 65539, 1048581, 1, 65539, 1048587, 1, 65539, 1048590, 1, 65539, 1048593, 1, 65539, 1048596, 1, 65539, 1048598, 1, 65539, 1048601, 1, 65539, 1048616, 1, 131075, 1048622, 1, 65539, 1048624, 1, 4, 1048625, 1, 196609, 1048626, 1, 262151, 1114112, 1, 65539, 1114114, 1, 65539, 1114117, 1, 65539, 1114123, 1, 65539, 1114126, 1, 65539, 1114129, 1, 65539, 1114132, 1, 65539, 1114134, 1, 65539, 1114137, 1, 65539, 1114140, 1, 196608, 1114141, 1, 196609, 1114142, 1, 196609, 1114143, 1, 196609, 1114144, 1, 196609, 1114145, 1, 196609, 1114146, 1, 196609, 1114147, 1, 196609, 1114148, 1, 196609, 1114149, 1, 196610, 1114153, 1, 196608, 1114154, 1, 8, 1114155, 1, 196609, 1114156, 1, 196609, 1114157, 1, 196609, 1114158, 1, 196616, 1114159, 1, 196609, 1114160, 1, 262151, 1114162, 1, 65539, 1179648, 1, 65539, 1179650, 1, 65539, 1179653, 1, 65539, 1179659, 1, 65539, 1179662, 1, 65539, 1179665, 1, 65539, 1179668, 1, 65539, 1179670, 1, 65539, 1179673, 1, 65539, 1179675, 1, 3, 1179686, 1, 3, 1179690, 1, 65539, 1179696, 1, 65539, 1179698, 1, 65539, 1245184, 1, 65539, 1245186, 1, 65539, 1245189, 1, 65539, 1245192, 1, 4, 1245193, 1, 196609, 1245194, 1, 196609, 1245195, 1, 196615, 1245198, 1, 196612, 1245199, 1, 196609, 1245200, 1, 196609, 1245201, 1, 196615, 1245204, 1, 65539, 1245206, 1, 65539, 1245209, 1, 65539, 1245211, 1, 65539, 1245222, 1, 65539, 1245226, 1, 65539, 1245232, 1, 65539, 1245234, 1, 65539, 1310720, 1, 65539, 1310722, 1, 65539, 1310725, 1, 65539, 1310728, 1, 65539, 1310740, 1, 65539, 1310742, 1, 65539, 1310745, 1, 65539, 1310747, 1, 65539, 1310758, 1, 65539, 1310762, 1, 65539, 1310765, 1, 3, 1310768, 1, 65539, 1310770, 1, 65539, 1376256, 1, 65539, 1376258, 1, 65539, 1376261, 1, 65539, 1376264, 1, 65539, 1376276, 1, 65539, 1376278, 1, 65539, 1376281, 1, 65539, 1376283, 1, 65539, 1376294, 1, 65539, 1376298, 1, 65539, 1376301, 1, 65539, 1376304, 1, 65539, 1376306, 1, 65539, 1441792, 1, 65539, 1441794, 1, 65539, 1441797, 1, 65539, 1441800, 1, 65539, 1441803, 1, 4, 1441804, 1, 196609, 1441805, 1, 196609, 1441806, 1, 196609, 1441807, 1, 196609, 1441808, 1, 196609, 1441809, 1, 196609, 1441810, 1, 196609, 1441811, 1, 196609, 1441812, 1, 262151, 1441814, 1, 65539, 1441817, 1, 65539, 1441819, 1, 65539, 1441830, 1, 65539, 1441834, 1, 65539, 1441837, 1, 65539, 1441840, 1, 65539, 1441842, 1, 65539, 1507328, 1, 65539, 1507330, 1, 65539, 1507333, 1, 65539, 1507336, 1, 65539, 1507339, 1, 65539, 1507348, 1, 65539, 1507350, 1, 65539, 1507353, 1, 65539, 1507355, 1, 65539, 1507366, 1, 65539, 1507370, 1, 65539, 1507373, 1, 65539, 1507376, 1, 65539, 1507378, 1, 65539, 1572864, 1, 65539, 1572866, 1, 65539, 1572869, 1, 196612, 1572870, 1, 196609, 1572871, 1, 196609, 1572872, 1, 196615, 1572875, 1, 65539, 1572877, 1, 4, 1572878, 1, 196609, 1572879, 1, 196609, 1572880, 1, 196609, 1572881, 1, 196610, 1572884, 1, 65539, 1572886, 1, 65539, 1572889, 1, 65539, 1572891, 1, 65539, 1572902, 1, 65539, 1572906, 1, 65539, 1572909, 1, 65539, 1572912, 1, 65539, 1572914, 1, 65539, 1638400, 1, 65539, 1638402, 1, 65539, 1638411, 1, 65539, 1638413, 1, 65539, 1638420, 1, 65539, 1638422, 1, 65539, 1638425, 1, 65539, 1638427, 1, 65539, 1638438, 1, 65539, 1638442, 1, 65539, 1638445, 1, 65539, 1638448, 1, 65539, 1638450, 1, 65539, 1703936, 1, 65539, 1703938, 1, 65539, 1703947, 1, 65539, 1703949, 1, 65539, 1703952, 1, 4, 1703953, 1, 196609, 1703954, 1, 7, 1703956, 1, 65539, 1703958, 1, 65539, 1703961, 1, 65539, 1703963, 1, 131075, 1703974, 1, 65539, 1703978, 1, 131075, 1703981, 1, 65539, 1703984, 1, 65539, 1703986, 1, 65539, 1769472, 1, 262148, 1769473, 1, 196609, 1769474, 1, 196616, 1769475, 1, 196609, 1769476, 1, 196609, 1769477, 1, 7, 1769480, 1, 4, 1769481, 1, 196609, 1769482, 1, 196609, 1769483, 1, 196615, 1769485, 1, 65539, 1769488, 1, 65539, 1769490, 1, 65539, 1769492, 1, 65539, 1769494, 1, 65539, 1769497, 1, 65539, 1769500, 1, 196608, 1769501, 1, 196609, 1769502, 1, 196609, 1769503, 1, 196609, 1769504, 1, 196609, 1769505, 1, 196609, 1769506, 1, 196610, 1769510, 1, 131075, 1769517, 1, 65539, 1769520, 1, 65539, 1769522, 1, 65539, 1835008, 1, 65539, 1835013, 1, 65539, 1835016, 1, 65539, 1835021, 1, 65539, 1835024, 1, 65539, 1835026, 1, 65539, 1835028, 1, 65539, 1835030, 1, 65539, 1835033, 1, 65539, 1835053, 1, 65539, 1835056, 1, 65539, 1835058, 1, 65539, 1900544, 1, 65539, 1900549, 1, 65539, 1900552, 1, 65539, 1900555, 1, 4, 1900556, 1, 196609, 1900557, 1, 196615, 1900560, 1, 65539, 1900562, 1, 65539, 1900564, 1, 131075, 1900566, 1, 65539, 1900569, 1, 196612, 1900570, 1, 196609, 1900571, 1, 196609, 1900572, 1, 196609, 1900573, 1, 196609, 1900574, 1, 196609, 1900575, 1, 196609, 1900576, 1, 196609, 1900577, 1, 196610, 1900589, 1, 65539, 1900592, 1, 65539, 1900594, 1, 65539, 1966080, 1, 65539, 1966082, 1, 4, 1966083, 1, 196609, 1966084, 1, 196609, 1966085, 1, 196615, 1966088, 1, 65539, 1966091, 1, 65539, 1966096, 1, 65539, 1966098, 1, 65539, 1966102, 1, 65539, 1966114, 1, 196608, 1966115, 1, 196609, 1966116, 1, 196609, 1966117, 1, 196609, 1966118, 1, 196609, 1966119, 1, 196609, 1966120, 1, 196609, 1966121, 1, 196609, 1966122, 1, 196609, 1966123, 1, 196609, 1966124, 1, 196609, 1966125, 1, 196615, 1966128, 1, 65539, 1966130, 1, 65539, 2031616, 1, 65539, 2031618, 1, 131075, 2031624, 1, 65539, 2031627, 1, 65539, 2031630, 1, 4, 2031631, 1, 196609, 2031632, 1, 196615, 2031634, 1, 65539, 2031638, 1, 65539, 2031664, 1, 65539, 2031666, 1, 65539, 2097152, 1, 65539, 2097160, 1, 196612, 2097161, 1, 196609, 2097162, 1, 196609, 2097163, 1, 196615, 2097166, 1, 65539, 2097170, 1, 196612, 2097171, 1, 7, 2097174, 1, 196612, 2097175, 1, 196609, 2097176, 1, 196609, 2097177, 1, 196609, 2097178, 1, 196609, 2097179, 1, 8, 2097180, 1, 196609, 2097181, 1, 196609, 2097182, 1, 196609, 2097183, 1, 196609, 2097184, 1, 196609, 2097185, 1, 196609, 2097186, 1, 196609, 2097187, 1, 196609, 2097188, 1, 196609, 2097189, 1, 196609, 2097190, 1, 196609, 2097191, 1, 196609, 2097192, 1, 196609, 2097193, 1, 196609, 2097194, 1, 196609, 2097195, 1, 196609, 2097196, 1, 8, 2097197, 1, 196609, 2097198, 1, 196609, 2097199, 1, 196609, 2097200, 1, 196615, 2097202, 1, 65539, 2162688, 1, 65539, 2162690, 1, 196608, 2162691, 1, 196609, 2162692, 1, 196609, 2162693, 1, 7, 2162702, 1, 65539, 2162707, 1, 65539, 2162715, 1, 65539, 2162732, 1, 65539, 2162738, 1, 65539, 2228224, 1, 65539, 2228229, 1, 262148, 2228230, 1, 196609, 2228231, 1, 196609, 2228232, 1, 196609, 2228233, 1, 196609, 2228234, 1, 196609, 2228235, 1, 196609, 2228236, 1, 196609, 2228237, 1, 196609, 2228238, 1, 196615, 2228243, 1, 65539, 2228246, 1, 196608, 2228247, 1, 196609, 2228248, 1, 196609, 2228249, 1, 196609, 2228250, 1, 196609, 2228251, 1, 196616, 2228252, 1, 196609, 2228253, 1, 196609, 2228254, 1, 196609, 2228255, 1, 196609, 2228256, 1, 196609, 2228257, 1, 196609, 2228258, 1, 196609, 2228259, 1, 196609, 2228260, 1, 196609, 2228261, 1, 196609, 2228262, 1, 196609, 2228263, 1, 7, 2228268, 1, 131075, 2228274, 1, 65539, 2293760, 1, 65539, 2293765, 1, 65539, 2293779, 1, 65539, 2293799, 1, 65539, 2293807, 1, 3, 2293810, 1, 65539, 2359296, 1, 196612, 2359297, 1, 196609, 2359298, 1, 196609, 2359299, 1, 196609, 2359300, 1, 196609, 2359301, 1, 196616, 2359302, 1, 196609, 2359303, 1, 196609, 2359304, 1, 196609, 2359305, 1, 196609, 2359306, 1, 196609, 2359307, 1, 196609, 2359308, 1, 196609, 2359309, 1, 196609, 2359310, 1, 196609, 2359311, 1, 196609, 2359312, 1, 196609, 2359313, 1, 196609, 2359314, 1, 196609, 2359315, 1, 196616, 2359316, 1, 196609, 2359317, 1, 196609, 2359318, 1, 196609, 2359319, 1, 196609, 2359320, 1, 196609, 2359321, 1, 196609, 2359322, 1, 196609, 2359323, 1, 196609, 2359324, 1, 196609, 2359325, 1, 196609, 2359326, 1, 196609, 2359327, 1, 196609, 2359328, 1, 196609, 2359329, 1, 196609, 2359330, 1, 196609, 2359331, 1, 196609, 2359332, 1, 196609, 2359333, 1, 196609, 2359334, 1, 196609, 2359335, 1, 196616, 2359336, 1, 196609, 2359337, 1, 196609, 2359338, 1, 196609, 2359339, 1, 196609, 2359340, 1, 196609, 2359341, 1, 196609, 2359342, 1, 196609, 2359343, 1, 196616, 2359344, 1, 196609, 2359345, 1, 196609, 2359346, 1, 196615 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 99.0183, 54.572 )
+current = true
+limit_smoothed = true
+smoothing_enabled = true
+
+[node name="Portal" parent="." instance=ExtResource( 10 )]
+position = Vector2( 934.232, 605.392 )
+max_score = 0
+levelC = 3
+star1 = 10
+star2 = 55
+star3 = 105
+change_scene = "res://Scenes/PictureScene/Hard/Scene7H.tscn"
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 99.0183, 54.572 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
+
+[node name="Enemy" type="YSort" parent="YSort"]
+
+[node name="Fish1" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 130, 672.5 )
+
+[node name="Fish2" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 222.648, 848.111 )
+
+[node name="StarFish" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 173.357, 1010.51 )
+
+[node name="StarFish2" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 172.516, 1032.37 )
+
+[node name="StarFish3" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 171.675, 1054.24 )
+
+[node name="Fish3" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 418.087, 1031.2 )
+
+[node name="StarFish4" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 704.509, 1085.76 )
+
+[node name="StarFish5" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 688.246, 891.303 )
+
+[node name="StarFish6" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 659.962, 1147.98 )
+
+[node name="StarFish7" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 698.853, 1147.28 )
+
+[node name="StarFish8" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 373.356, 225.029 )
+
+[node name="StarFish9" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 339.415, 255.435 )
+
+[node name="StarFish10" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 208.6, 216.544 )
+
+[node name="Octopus" parent="YSort/Enemy" instance=ExtResource( 15 )]
+position = Vector2( 225.549, 97.5681 )
+
+[node name="Fish4" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 893.105, 57.3197 )
+
+[node name="Fish5" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 1427.07, 72.1522 )
+
+[node name="Fish6" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 1435.55, 500.175 )
+
+[node name="StarFish11" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 1083.81, 57.3197 )
+
+[node name="StarFish12" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 309.036, 667.138 )
+
+[node name="StarFish13" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 351.51, 666.194 )
+
+[node name="Fish7" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 608.292, 501.97 )
+
+[node name="Fish8" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 608.292, 261.492 )
+
+[node name="Octopus2" parent="YSort/Enemy" instance=ExtResource( 15 )]
+position = Vector2( 1182.34, 162.067 )
+
+[node name="StarFish14" parent="YSort/Enemy" instance=ExtResource( 9 )]
+position = Vector2( 1363.19, 440.919 )
+
+[node name="Octopus3" parent="YSort/Enemy" instance=ExtResource( 15 )]
+position = Vector2( 1307.11, 915.263 )
+
+[node name="Octopus4" parent="YSort/Enemy" instance=ExtResource( 15 )]
+position = Vector2( 971.493, 668.042 )
+
+[node name="Fish9" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 1154.29, 641.072 )
+
+[node name="Fish10" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 803.376, 970.621 )
+
+[node name="Corals" type="YSort" parent="YSort"]
+
+[node name="Coral9" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 585.45, 813.082 )
+
+[node name="Coral10" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 585.47, 777.624 )
+
+[node name="Coral11" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 585.47, 740.652 )
+
+[node name="Coral12" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 619.769, 813.706 )
+
+[node name="Coral13" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 617.987, 777.624 )
+
+[node name="Coral14" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 617.987, 739.761 )
+
+[node name="Weed17" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 461.635, 816.378 )
+
+[node name="Weed18" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 461.635, 830.187 )
+
+[node name="Weed19" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 461.189, 846.224 )
+
+[node name="Coral15" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 463.417, 878.741 )
+
+[node name="Weed20" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 459.853, 926.404 )
+
+[node name="Weed21" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 458.962, 937.541 )
+
+[node name="Weed22" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 459.853, 951.35 )
+
+[node name="Coral1" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 268.449, 47.7861 )
+
+[node name="Coral4" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 45.4732, 41.2454 )
+
+[node name="Coral2" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 269.509, 141.549 )
+
+[node name="AnimatedSprite" parent="YSort/Corals/Coral2" index="0"]
+frame = 3
+
+[node name="Coral3" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 51.8841, 137.981 )
+
+[node name="AnimatedSprite" parent="YSort/Corals/Coral3" index="0"]
+frame = 2
+
+[node name="Weed" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 273.695, 75.7744 )
+
+[node name="Weed2" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 272.506, 99.5586 )
+
+[node name="Weed3" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 274.29, 124.532 )
+
+[node name="Weed4" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 234.452, 153.667 )
+
+[node name="Weed5" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 205.911, 154.857 )
+
+[node name="Weed7" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 77.4762, 153.073 )
+
+[node name="Weed6" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 176.18, 152.478 )
+
+[node name="Weed8" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 49.5299, 115.613 )
+
+[node name="Weed9" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 49.5299, 91.2341 )
+
+[node name="Weed10" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 50.1245, 70.423 )
+
+[node name="Weed11" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 85.8007, 44.855 )
+
+[node name="Weed12" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 116.72, 44.2604 )
+
+[node name="Weed13" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 150.612, 43.6658 )
+
+[node name="Weed15" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 214.83, 44.855 )
+
+[node name="Weed16" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 243.965, 45.4496 )
+
+[node name="Weed14" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 183.316, 45.4496 )
+
+[node name="Spikes" parent="YSort/Corals" instance=ExtResource( 14 )]
+position = Vector2( 143.517, 177.642 )
+
+[node name="Spikes2" parent="YSort/Corals" instance=ExtResource( 14 )]
+position = Vector2( 115.899, 229.315 )
+
+[node name="Spikes3" parent="YSort/Corals" instance=ExtResource( 14 )]
+position = Vector2( 147.081, 282.323 )
+
+[node name="HealingCoral2" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 140.934, 374.549 )
+
+[node name="HealingCoral3" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 96.8845, 418.599 )
+
+[node name="Coral5" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 98.2193, 459.312 )
+
+[node name="Coral6" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 120.244, 459.312 )
+
+[node name="Coral7" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 140.267, 459.312 )
+
+[node name="Spikes4" parent="YSort/Corals" instance=ExtResource( 14 )]
+position = Vector2( 111.89, 335.331 )
+
+[node name="HealingCoral4" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 135.931, 939.974 )
+
+[node name="Coral8" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 319.886, 1000.12 )
+
+[node name="AnimatedSprite" parent="YSort/Corals/Coral8" index="0"]
+position = Vector2( 0.297316, -8.47309 )
+scale = Vector2( 0.648651, 0.669462 )
+frame = 3
+
+[node name="CollisionShape2D" parent="YSort/Corals/Coral8" index="1"]
+position = Vector2( -0.785522, 5.85547 )
+
+[node name="Coral16" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 520.164, 1033.98 )
+
+[node name="Coral17" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 497.888, 1039.13 )
+
+[node name="Coral18" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 511.7, 1045.12 )
+
+[node name="Coral19" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 495.664, 1050.91 )
+
+[node name="Weed23" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 592.326, 1147.13 )
+
+[node name="Weed24" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 572.727, 1148.02 )
+
+[node name="Weed25" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 594.999, 1137.33 )
+
+[node name="Weed26" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 595.89, 1126.64 )
+
+[node name="Weed27" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 594.108, 1111.94 )
+
+[node name="Weed28" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 554.463, 1148.91 )
+
+[node name="Weed29" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 577.627, 1134.21 )
+
+[node name="Weed30" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 556.69, 1135.54 )
+
+[node name="Weed31" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 571.836, 1125.3 )
+
+[node name="Coral20" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 215.186, 1130.83 )
+
+[node name="Coral21" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 262.433, 1130.2 )
+
+[node name="Coral22" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 309.05, 1130.83 )
+
+[node name="Coral23" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 355.037, 1131.46 )
+
+[node name="Coral24" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 402.914, 1132.09 )
+
+[node name="Coral25" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 452.051, 1130.83 )
+
+[node name="Weed32" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 271.176, 604.851 )
+
+[node name="Weed33" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 298.264, 603.591 )
+
+[node name="Weed34" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 328.502, 603.591 )
+
+[node name="Weed35" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 344.251, 597.921 )
+
+[node name="Weed36" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 342.991, 571.463 )
+
+[node name="Weed37" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 342.361, 543.745 )
+
+[node name="Weed38" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 343.621, 517.916 )
+
+[node name="Weed39" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 339.842, 488.938 )
+
+[node name="Weed40" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 337.952, 461.85 )
+
+[node name="Weed41" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 307.714, 460.59 )
+
+[node name="Weed42" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 281.255, 457.44 )
+
+[node name="Weed43" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 249.757, 456.81 )
+
+[node name="Coral26" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 281.885, 488.308 )
+
+[node name="Coral27" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 279.365, 553.824 )
+
+[node name="Coral28" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 221.409, 751.631 )
+
+[node name="Coral29" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 224.559, 678.556 )
+
+[node name="Coral30" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 227.079, 517.916 )
+
+[node name="Coral84" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 296.562, 360.669 )
+
+[node name="Coral31" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 325.746, 385.363 )
+
+[node name="Coral32" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 358.858, 384.802 )
+
+[node name="Coral33" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 393.655, 384.802 )
+
+[node name="Coral34" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 294.317, 331.485 )
+
+[node name="Coral35" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 332.481, 301.74 )
+
+[node name="Coral36" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 360.542, 301.74 )
+
+[node name="Coral37" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 388.042, 301.74 )
+
+[node name="Coral38" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 421.155, 330.924 )
+
+[node name="Coral39" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 418.349, 357.863 )
+
+[node name="Coral40" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 275.782, 306.65 )
+
+[node name="Coral41" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 273.26, 398.308 )
+
+[node name="Coral42" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 405.759, 266.667 )
+
+[node name="Coral43" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 512.216, 579.903 )
+
+[node name="Coral44" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 513.406, 397.955 )
+
+[node name="Weed44" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 524.109, 170.816 )
+
+[node name="Weed45" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 525.298, 188.654 )
+
+[node name="Weed46" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 527.661, 210.002 )
+
+[node name="Coral45" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 525.301, 234.542 )
+
+[node name="Weed47" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 525.993, 260.959 )
+
+[node name="Weed48" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 524.495, 272.571 )
+
+[node name="Coral46" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 529.739, 290.925 )
+
+[node name="Weed49" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 528.615, 323.888 )
+
+[node name="Weed50" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 528.615, 338.497 )
+
+[node name="Weed51" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 527.866, 351.232 )
+
+[node name="Weed52" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 528.241, 371.834 )
+
+[node name="HealingCoral9" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 197.286, 263.213 )
+
+[node name="HealingCoral10" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 199.408, 254.021 )
+
+[node name="Coral47" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1514, 261 )
+
+[node name="Coral48" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1516, 288 )
+
+[node name="Coral49" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1515, 318 )
+
+[node name="Coral50" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1517, 347 )
+
+[node name="Coral51" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1513, 377 )
+
+[node name="Coral52" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1513, 409 )
+
+[node name="Coral53" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1543, 457 )
+
+[node name="Coral54" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1539, 227 )
+
+[node name="Coral55" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1572, 266 )
+
+[node name="Coral56" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1573, 300 )
+
+[node name="Coral57" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1575, 330 )
+
+[node name="Coral58" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1577, 359 )
+
+[node name="Coral59" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1575, 388 )
+
+[node name="Coral60" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1573, 418 )
+
+[node name="HealingCoral12" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 598.805, 684.127 )
+
+[node name="Coral61" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 469.494, 648.26 )
+
+[node name="Coral62" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 505.361, 647.316 )
+
+[node name="Coral63" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 542.173, 648.26 )
+
+[node name="Spikes5" parent="YSort/Corals" instance=ExtResource( 14 )]
+position = Vector2( 1357.85, 142.468 )
+
+[node name="Spikes6" parent="YSort/Corals" instance=ExtResource( 14 )]
+position = Vector2( 1263.41, 366.974 )
+
+[node name="Spikes7" parent="YSort/Corals" instance=ExtResource( 14 )]
+position = Vector2( 1262.52, 337.574 )
+
+[node name="Spikes8" parent="YSort/Corals" instance=ExtResource( 14 )]
+position = Vector2( 1265.19, 306.393 )
+
+[node name="HealingCoral15" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 781.554, 337.781 )
+
+[node name="HealingCoral16" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 781.888, 355.134 )
+
+[node name="Weed53" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 749.078, 285.831 )
+
+[node name="Weed54" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 766.717, 285.201 )
+
+[node name="Weed55" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 786.246, 284.571 )
+
+[node name="Coral64" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 828.453, 277.012 )
+
+[node name="Weed56" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 873.81, 285.831 )
+
+[node name="Weed57" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 892.709, 285.201 )
+
+[node name="Weed58" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 912.868, 285.201 )
+
+[node name="Coral65" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 973.344, 268.822 )
+
+[node name="Weed59" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1030.04, 283.941 )
+
+[node name="Weed60" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1051.46, 283.941 )
+
+[node name="Weed61" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1072.88, 282.681 )
+
+[node name="Coral66" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1114.46, 269.452 )
+
+[node name="Weed62" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1208.32, 380.955 )
+
+[node name="Weed63" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1207.69, 371.506 )
+
+[node name="Weed64" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1179.97, 382.845 )
+
+[node name="Weed65" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1197.61, 380.325 )
+
+[node name="Weed66" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1207.68, 357.269 )
+
+[node name="Weed67" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1188.05, 364.107 )
+
+[node name="Weed68" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1207.38, 338.242 )
+
+[node name="Weed69" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1161.3, 381.648 )
+
+[node name="Weed70" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1176.46, 366.485 )
+
+[node name="Coral67" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 738.682, 413.55 )
+
+[node name="Coral68" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 751.034, 412.642 )
+
+[node name="Coral69" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 765.119, 412.221 )
+
+[node name="Coral70" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 735.898, 420.21 )
+
+[node name="Coral71" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 736.318, 427.778 )
+
+[node name="Coral72" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 735.267, 437.448 )
+
+[node name="Coral73" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 749.142, 419.579 )
+
+[node name="Coral74" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 758.812, 421.261 )
+
+[node name="Coral75" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 749.352, 424.414 )
+
+[node name="HealingCoral18" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 861.678, 859.69 )
+
+[node name="HealingCoral19" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 874.037, 860.79 )
+
+[node name="HealingCoral20" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 867.415, 866.087 )
+
+[node name="Coral76" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 916.836, 746.631 )
+
+[node name="Coral77" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 910.532, 758.875 )
+
+[node name="Coral78" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 909.271, 774.853 )
+
+[node name="Coral79" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 931.975, 758.875 )
+
+[node name="Coral80" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 933.656, 770.648 )
+
+[node name="Coral81" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 936.179, 745.001 )
+
+[node name="Coral82" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 926.509, 780.739 )
+
+[node name="Coral85" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1585.44, 561.392 )
+
+[node name="Coral86" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1583.55, 584.045 )
+
+[node name="Coral87" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1580.72, 610.473 )
+
+[node name="Coral88" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 1586.38, 764.325 )
+
+[node name="Coral89" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1581.66, 953.099 )
+
+[node name="Coral90" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1584.5, 979.528 )
+
+[node name="Coral91" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1583.55, 1008.79 )
+
+[node name="Coral83" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 1061.47, 588.215 )
+
+[node name="Weed71" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1523.01, 589.463 )
+
+[node name="Weed72" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1499.4, 588.127 )
+
+[node name="Weed73" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1475.8, 588.572 )
+
+[node name="Weed74" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1523.9, 601.936 )
+
+[node name="Weed75" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1525.24, 617.526 )
+
+[node name="Weed76" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1526.13, 633.563 )
+
+[node name="Weed77" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1502.08, 596.59 )
+
+[node name="Weed78" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1506.53, 610.845 )
+
+[node name="Weed79" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1506.53, 619.308 )
+
+[node name="Weed80" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1490.94, 605.054 )
+
+[node name="Coral92" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 746.463, 429.632 )
+
+[node name="Fishes" type="YSort" parent="YSort"]
+
+[node name="Fish2" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 220.501, 66.1572 )
+
+[node name="Fish3" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 106.478, 125.374 )
+
+[node name="Fish4" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 73.0905, 57.3378 )
+
+[node name="Fish5" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 227.431, 112.144 )
+
+[node name="Fish6" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 117.025, 374.949 )
+
+[node name="Fish7" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 127.343, 549.563 )
+
+[node name="Fish8" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 130.518, 252.719 )
+
+[node name="Fish9" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 112.783, 775.445 )
+
+[node name="Fish10" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 46.0409, 212.143 )
+
+[node name="Fish11" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 42.0363, 309.586 )
+
+[node name="Fish12" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 47.3757, 421.713 )
+
+[node name="Fish13" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 46.0409, 527.165 )
+
+[node name="Fish14" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 46.0409, 620.604 )
+
+[node name="Fish15" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 48.7106, 714.042 )
+
+[node name="Fish16" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 47.3757, 812.821 )
+
+[node name="Fish17" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 42.0363, 254.858 )
+
+[node name="Fish18" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 43.3712, 358.975 )
+
+[node name="Fish19" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 42.9069, 915.557 )
+
+[node name="Fish20" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 47.8567, 989.804 )
+
+[node name="Fish21" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 127.053, 911.315 )
+
+[node name="Fish22" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 92.4044, 926.871 )
+
+[node name="Fish23" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 49.978, 1107.89 )
+
+[node name="Fish24" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 138.366, 1103.65 )
+
+[node name="Fish25" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 97.3542, 1134.76 )
+
+[node name="Fish26" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 107.961, 1037.89 )
+
+[node name="Fish27" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 248.495, 1064.27 )
+
+[node name="Fish28" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 223.01, 971.769 )
+
+[node name="Fish29" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 361.76, 1070.88 )
+
+[node name="Fish30" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 432.55, 979.32 )
+
+[node name="Fish31" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 483.519, 900.035 )
+
+[node name="Fish32" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 493.902, 829.244 )
+
+[node name="Fish33" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 510.892, 749.015 )
+
+[node name="Fish34" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 399.515, 805.647 )
+
+[node name="Fish35" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 374.974, 909.473 )
+
+[node name="Fish36" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 313.622, 961.386 )
+
+[node name="Fish37" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 507.116, 1117.13 )
+
+[node name="Fish38" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 554.31, 1064.27 )
+
+[node name="Fish39" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 555.254, 984.983 )
+
+[node name="Fish40" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 559.029, 900.035 )
+
+[node name="Fish41" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 623.831, 869.704 )
+
+[node name="Fish42" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 621.45, 932.406 )
+
+[node name="Fish43" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 661.135, 989.552 )
+
+[node name="Fish44" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 662.723, 1096.7 )
+
+[node name="Fish45" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 691.296, 826.844 )
+
+[node name="Fish46" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 757.967, 1142.74 )
+
+[node name="Fish47" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 800.033, 1081.62 )
+
+[node name="Fish48" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1126.6, 1131.69 )
+
+[node name="Fish49" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 837.001, 1127.2 )
+
+[node name="Fish51" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1220.88, 1129.45 )
+
+[node name="Fish52" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 957.104, 1068.83 )
+
+[node name="Fish53" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1054.76, 1068.83 )
+
+[node name="Fish54" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1154.66, 1072.2 )
+
+[node name="Fish55" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1252.31, 1064.35 )
+
+[node name="Fish56" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1321.91, 1069.96 )
+
+[node name="Fish57" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1372.42, 1114.86 )
+
+[node name="Fish58" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1297.21, 1129.45 )
+
+[node name="Fish59" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1452.11, 1129.45 )
+
+[node name="Fish60" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1475.68, 1066.59 )
+
+[node name="Fish61" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1544.48, 1130.7 )
+
+[node name="Fish62" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1588.21, 916.276 )
+
+[node name="Fish63" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1586.53, 1050.82 )
+
+[node name="Fish64" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1581.48, 813.687 )
+
+[node name="Fish65" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1585.68, 858.254 )
+
+[node name="Fish66" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1578.96, 681.666 )
+
+[node name="Fish67" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1581.48, 722.87 )
+
+[node name="Fish68" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1578.96, 634.576 )
+
+[node name="Fish69" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 315.268, 833.744 )
+
+[node name="Fish70" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 307.776, 769.317 )
+
+[node name="Fish71" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 325.756, 703.391 )
+
+[node name="Fish72" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 217.878, 709.384 )
+
+[node name="Fish73" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 203.644, 643.459 )
+
+[node name="Fish74" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 241.851, 591.018 )
+
+[node name="Fish75" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 208.139, 551.313 )
+
+[node name="Fish76" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 301.034, 514.604 )
+
+[node name="Fish77" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 208.888, 454.672 )
+
+[node name="Fish78" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 200.475, 374.792 )
+
+[node name="Fish79" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 201.1, 299.239 )
+
+[node name="Fish80" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 242.48, 231.162 )
+
+[node name="Fish81" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 323.905, 211.139 )
+
+[node name="Fish82" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 354.658, 129.48 )
+
+[node name="Fish83" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 354.658, 52.03 )
+
+[node name="Fish84" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 451.19, 159.789 )
+
+[node name="Fish85" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 455.68, 255.199 )
+
+[node name="Fish86" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 454.557, 315.812 )
+
+[node name="Fish87" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 401.801, 439.282 )
+
+[node name="Fish88" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 426.496, 487.548 )
+
+[node name="Fish89" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 392.822, 543.671 )
+
+[node name="Fish90" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 418.638, 596.427 )
+
+[node name="Fish91" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 423.1, 671.546 )
+
+[node name="Fish92" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 540.958, 680.526 )
+
+[node name="Fish93" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 606.061, 635.627 )
+
+[node name="Fish94" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 607.184, 546.953 )
+
+[node name="Fish95" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 597.081, 442.564 )
+
+[node name="Fish96" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 608.306, 347.154 )
+
+[node name="Fish97" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 593.714, 198.99 )
+
+[node name="Fish98" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 646.47, 146.234 )
+
+[node name="Fish99" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 766.573, 157.458 )
+
+[node name="Fish100" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 942.8, 158.581 )
+
+[node name="Fish101" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1113.41, 143.989 )
+
+[node name="Fish102" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1325.27, 178.252 )
+
+[node name="Fish103" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1364.56, 253.457 )
+
+[node name="Fish104" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 872.922, 353.356 )
+
+[node name="Fish105" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 988.536, 329.784 )
+
+[node name="Fish106" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1086.19, 349.989 )
+
+[node name="Fish107" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1210.78, 250.09 )
+
+[node name="Fish108" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1037.92, 238.865 )
+
+[node name="Fish109" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 865.065, 248.967 )
+
+[node name="Fish110" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 706.798, 252.335 )
+
+[node name="Fish111" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 700.063, 361.213 )
+
+[node name="Fish112" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 687.716, 484.684 )
+
+[node name="Fish113" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 685.471, 612.645 )
+
+[node name="Fish114" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 601.457, 48.7401 )
+
+[node name="Fish115" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 690.912, 72.6801 )
+
+[node name="Fish116" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 752.648, 67.64 )
+
+[node name="Fish117" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1043, 76 )
+
+[node name="Fish118" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1191.17, 46.64 )
+
+[node name="Fish119" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1281.94, 66.66 )
+
+[node name="Fish120" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1547.57, 69.3301 )
+
+[node name="Fish121" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1527.55, 165.439 )
+
+[node name="Fish122" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1571.6, 193.471 )
+
+[node name="Fish123" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1432.78, 184.127 )
+
+[node name="Fish124" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1432.78, 261.547 )
+
+[node name="Fish125" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1427.44, 368.335 )
+
+[node name="Fish126" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1334, 348.312 )
+
+[node name="Fish127" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1261.92, 419.058 )
+
+[node name="Fish128" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1119.09, 413.719 )
+
+[node name="Fish129" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 938.885, 423.063 )
+
+[node name="Fish130" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 750.672, 485.8 )
+
+[node name="Fish131" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 780.039, 532.52 )
+
+[node name="Fish132" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 746.668, 608.606 )
+
+[node name="Fish133" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 777.369, 732.746 )
+
+[node name="Fish134" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 745.333, 822.18 )
+
+[node name="Fish135" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 884.156, 890.257 )
+
+[node name="Fish136" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 997.618, 895.596 )
+
+[node name="Fish137" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 865.469, 520.506 )
+
+[node name="Fish138" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1052.35, 492.475 )
+
+[node name="Fish139" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1292.62, 716.728 )
+
+[node name="Fish140" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1268.59, 559.217 )
+
+[node name="Fish141" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 970.921, 827.519 )
+
+[node name="Fish142" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1032.32, 735.415 )
+
+[node name="Fish143" parent="YSort/Fishes" instance=ExtResource( 6 )]
+position = Vector2( 1092.39, 807.497 )
+
+[node name="Fish144" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 1148.46, 744.759 )
+
+[node name="Fish50" parent="YSort/Fishes" instance=ExtResource( 2 )]
+position = Vector2( 941.39, 1135.06 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource( 8 )]
+margin_left = -1.04007
+margin_right = -1.04007
+
+[node name="Retry" parent="CanvasLayer/UI/ColorRect" index="2"]
+scene = "res://Scenes/LevelOverlay/Hard/Level3.tscn"
+reset_global_score = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "H"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[editable path="YSort/Corals/Coral2"]
+
+[editable path="YSort/Corals/Coral3"]
+
+[editable path="YSort/Corals/Coral8"]
+
+[editable path="CanvasLayer/UI"]

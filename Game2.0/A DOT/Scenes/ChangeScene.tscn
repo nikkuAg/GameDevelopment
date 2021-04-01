@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/ChangeScene.gd" type="Script" id=1]
+
+[node name="ChangeScene" type="TextureButton"]
+margin_right = 104.0
+margin_bottom = 24.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene = "res://Scenes/World.tscn"
+[connection signal="button_up" from="." to="." method="_on_ChangeScene_button_up"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://World/Background.png" type="Texture" id=1]
+[ext_resource path="res://World/WallTile.tscn" type="PackedScene" id=2]
+
+[node name="Background" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallTile" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( -1, 1, 4, -65536, 1, 196609, -65535, 1, 196609, -65534, 1, 196609, -65533, 1, 196609, -65532, 1, 196609, -65531, 1, 196609, -65530, 1, 196609, -65529, 1, 196609, -65528, 1, 196609, -65527, 1, 196609, -65526, 1, 196609, -65525, 1, 196609, -65524, 1, 196609, -65523, 1, 7, 65535, 1, 65539, 13, 1, 65539, 131071, 1, 65539, 65549, 1, 65539, 196607, 1, 65539, 131085, 1, 65539, 262143, 1, 65539, 196621, 1, 65539, 327679, 1, 65539, 262157, 1, 65539, 393215, 1, 65539, 327693, 1, 65539, 458751, 1, 65539, 393229, 1, 65539, 524287, 1, 196612, 458752, 1, 196609, 458753, 1, 196609, 458754, 1, 196609, 458755, 1, 196609, 458756, 1, 196609, 458757, 1, 196609, 458758, 1, 196609, 458759, 1, 196609, 458760, 1, 196609, 458761, 1, 196609, 458762, 1, 196609, 458763, 1, 196609, 458764, 1, 196609, 458765, 1, 196615 )

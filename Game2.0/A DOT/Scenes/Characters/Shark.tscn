@@ -1,0 +1,114 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Characters/Fish/Shark/Movement/1.png" type="Texture" id=1]
+[ext_resource path="res://Characters/Fish/Shark/Movement/2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/HurtBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Shark.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Stats.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PlayerDetection.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/HitBox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/SoftCollision.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/WanderControler.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Characters/Fish/Shark/Movement/3.png" type="Texture" id=10]
+[ext_resource path="res://Characters/Fish/Shark/Movement/7.png" type="Texture" id=11]
+[ext_resource path="res://Characters/Fish/Shark/Attack/5.png" type="Texture" id=12]
+[ext_resource path="res://Characters/Fish/Shark/Movement/6.png" type="Texture" id=13]
+[ext_resource path="res://Characters/Fish/Shark/Movement/5.png" type="Texture" id=14]
+[ext_resource path="res://Characters/Fish/Shark/Attack/2.png" type="Texture" id=15]
+[ext_resource path="res://Characters/Fish/Shark/Attack/6.png" type="Texture" id=16]
+[ext_resource path="res://Characters/Fish/Shark/Attack/4.png" type="Texture" id=17]
+[ext_resource path="res://Characters/Fish/Shark/Attack/1.png" type="Texture" id=18]
+[ext_resource path="res://Characters/Fish/Shark/Attack/3.png" type="Texture" id=19]
+[ext_resource path="res://Characters/Fish/Shark/Movement/4.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 6.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 3.83231
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 45.2385
+height = 373.974
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 948.517
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 38.0311
+height = 196.926
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 4.81899
+
+[node name="Shark" type="KinematicBody2D"]
+collision_layer = 16
+script = ExtResource( 4 )
+WanderRange = 10
+score = 500
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 12.9857, 47.3819 )
+scale = Vector2( 7.1521, 5.46168 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+offset = Vector2( 0, -12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="HurtBox" parent="." instance=ExtResource( 3 )]
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2( 0.0503101, -29.4569 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="Stats" parent="." instance=ExtResource( 5 )]
+max_health = 18
+
+[node name="PlayerDetection" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="PlayerDetection" index="0"]
+modulate = Color( 1, 1, 1, 0.231373 )
+shape = SubResource( 4 )
+
+[node name="HitBox" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2.4194, 0 )
+collision_layer = 2147483648
+collision_mask = 4
+damage = 4
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2( -86.2444, -30.5738 )
+rotation = 1.5708
+shape = SubResource( 5 )
+
+[node name="SoftCollision" parent="." instance=ExtResource( 8 )]
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+shape = SubResource( 6 )
+
+[node name="WanderControler" parent="." instance=ExtResource( 9 )]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+
+[editable path="HurtBox"]
+
+[editable path="PlayerDetection"]
+
+[editable path="HitBox"]
+
+[editable path="SoftCollision"]

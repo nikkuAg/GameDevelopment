@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Fonts/Xanh_Mono/XanhMono-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Instruction/InstructionPortal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Characters/SeaHorse.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/portal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Instructions/InstructionMovement.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/Music and Sounds/Tutorial.ogg" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[node name="Instruction" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 180.418 ],
+"_edit_use_anchors_": false
+}
+
+[node name="Background" parent="." instance=ExtResource( 6 )]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 147.5, 121 )
+move = false
+action = false
+
+[node name="Label1" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 1 )
+text = "Use Arrow keys or WAsd to move the SeaHorse"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 2 )
+text = "Enter the Portal"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Portal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 230.731, 338.587 )
+scale = Vector2( 0.22, 0.25 )
+max_score = 0
+change_scene = "res://Scenes/Instruction/AttackH.tscn"
+
+[node name="InstructionPortal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 299.649, 94.1622 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -8.478
+autoplay = true
+[connection signal="body_entered" from="InstructionPortal" to="." method="_on_InstructionPortal_body_entered"]

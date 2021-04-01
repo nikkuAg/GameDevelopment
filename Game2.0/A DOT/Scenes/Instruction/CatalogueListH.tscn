@@ -1,0 +1,672 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Fonts/Special_Elite/SpecialElite-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/virtual-rot-font/VirtualRotRegular-R51V.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/Audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scenes/Corals/Spikes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Characters/Fish1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Characters/StarFish.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Octopus.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Characters/Shark.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/CatalogueList.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Corals/Coral3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Corals/HealingCoral.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Corals/Coral1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Corals/Coral2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Corals/Weed.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/ChangeSceneButton.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Resources/Music and Sounds/Tutorial.ogg" type="AudioStream" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0313726, 1, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id=5]
+TabContainer/colors/font_color_bg = Color( 1, 1, 1, 1 )
+TabContainer/colors/font_color_disabled = Color( 0.901961, 0.901961, 0.901961, 0.2 )
+TabContainer/colors/font_color_fg = Color( 1, 0, 0, 1 )
+TabContainer/constants/hseparation = 4
+TabContainer/constants/label_valign_bg = 2
+TabContainer/constants/label_valign_fg = 0
+TabContainer/constants/side_margin = 8
+TabContainer/constants/top_margin = 24
+TabContainer/fonts/font = SubResource( 1 )
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_highlight = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_highlight = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = SubResource( 2 )
+TabContainer/styles/tab_bg = SubResource( 3 )
+TabContainer/styles/tab_disabled = null
+TabContainer/styles/tab_fg = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 225.503 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0, 1, 1, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -16.0
+theme = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemies" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 25.0
+margin_right = -2.0
+margin_bottom = -2.0
+script = ExtResource( 9 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Enemies"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Node2D" parent="TabContainer/Enemies/RichTextLabel"]
+position = Vector2( 0, -85 )
+
+[node name="Disco Fish" type="Panel" parent="TabContainer/Enemies/RichTextLabel/Control"]
+margin_left = 6.0
+margin_top = 93.0
+margin_right = 299.0
+margin_bottom = 192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headings" type="Label" parent="TabContainer/Enemies/RichTextLabel/Control/Disco Fish"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.505882, 0, 1 )
+text = "Disco Fish"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Enemies/RichTextLabel/Control/Disco Fish"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 78.0
+margin_top = 21.0
+margin_right = 2.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "These fish chase you as soon as you near them. They do less damage but are found in large numbers."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fish1" parent="TabContainer/Enemies/RichTextLabel/Control/Disco Fish" instance=ExtResource( 5 )]
+position = Vector2( 34.258, 58.9054 )
+movement = false
+
+[node name="Sprite" parent="TabContainer/Enemies/RichTextLabel/Control/Disco Fish/Fish1" index="0"]
+position = Vector2( -0.289276, 8.06035 )
+scale = Vector2( 1.58754, 1.37445 )
+flip_h = true
+
+[node name="Star Fish" type="Panel" parent="TabContainer/Enemies/RichTextLabel/Control"]
+margin_left = 6.0
+margin_top = 201.0
+margin_right = 299.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headings" type="Label" parent="TabContainer/Enemies/RichTextLabel/Control/Star Fish"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.505882, 0, 1 )
+text = "Starfish"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Enemies/RichTextLabel/Control/Star Fish"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 21.0
+margin_right = -76.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "These fish pack a good punch. They are static bombs which deal a high damage as soon as you touch them."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarFish" parent="TabContainer/Enemies/RichTextLabel/Control/Star Fish" instance=ExtResource( 6 )]
+position = Vector2( 255.751, 65.6464 )
+
+[node name="Sprite" parent="TabContainer/Enemies/RichTextLabel/Control/Star Fish/StarFish" index="0"]
+position = Vector2( 2.15366, -3.7865 )
+scale = Vector2( 1.14889, 1.02067 )
+frame = 2
+
+[node name="Octopus" type="Panel" parent="TabContainer/Enemies/RichTextLabel/Control"]
+margin_left = 6.0
+margin_top = 313.0
+margin_right = 299.0
+margin_bottom = 451.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headings" type="Label" parent="TabContainer/Enemies/RichTextLabel/Control/Octopus"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.505882, 0, 1 )
+text = "Octopus"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Enemies/RichTextLabel/Control/Octopus"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 78.0
+margin_top = 21.0
+margin_right = 2.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "These are large fishes that chases you till death. The scary tentacles do a lot of damage and have a bit more healht than others. Mainly found in the Moster Valley."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Octopus" parent="TabContainer/Enemies/RichTextLabel/Control/Octopus" instance=ExtResource( 7 )]
+position = Vector2( 39.4305, 85.1532 )
+movement = false
+
+[node name="Sprite" parent="TabContainer/Enemies/RichTextLabel/Control/Octopus/Octopus" index="0"]
+frame = 1
+flip_h = true
+
+[node name="Shark" type="Panel" parent="TabContainer/Enemies/RichTextLabel/Control"]
+margin_left = 6.0
+margin_top = 457.0
+margin_right = 299.0
+margin_bottom = 592.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headings" type="Label" parent="TabContainer/Enemies/RichTextLabel/Control/Shark"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.505882, 0, 1 )
+text = "Shark"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Enemies/RichTextLabel/Control/Shark"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 21.0
+margin_right = -55.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "The hardest to defeat and very scary. The bite can almost 2 shot you!. With high health and damage, killing the boss you will become the richest sea creature alive!! Mainly found in Shark Underway"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shark" parent="TabContainer/Enemies/RichTextLabel/Control/Shark" instance=ExtResource( 8 )]
+position = Vector2( 200.768, 79.4597 )
+movement = false
+
+[node name="Sprite" parent="TabContainer/Enemies/RichTextLabel/Control/Shark/Shark" index="0"]
+position = Vector2( 61.0399, 4.20498 )
+scale = Vector2( 1.51018, 1.69675 )
+frame = 0
+
+[node name="CollisionShape2D" parent="TabContainer/Enemies/RichTextLabel/Control/Shark/Shark" index="1"]
+visible = false
+
+[node name="HurtBox" parent="TabContainer/Enemies/RichTextLabel/Control/Shark/Shark" index="2"]
+visible = false
+
+[node name="PlayerDetection" parent="TabContainer/Enemies/RichTextLabel/Control/Shark/Shark" index="4"]
+visible = false
+
+[node name="HitBox" parent="TabContainer/Enemies/RichTextLabel/Control/Shark/Shark" index="5"]
+visible = false
+
+[node name="Tip" type="Panel" parent="TabContainer/Enemies/RichTextLabel/Control"]
+margin_left = 6.0
+margin_top = 600.0
+margin_right = 299.0
+margin_bottom = 679.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headings" type="Label" parent="TabContainer/Enemies/RichTextLabel/Control/Tip"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.505882, 0, 1 )
+text = "Tip"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Enemies/RichTextLabel/Control/Tip"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 21.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Buy better gear from the shop after each level to increase your health and imporve your sword."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar" type="VScrollBar" parent="TabContainer/Enemies"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -12.0
+min_value = 85.0
+max_value = 600.0
+page = 50.0
+value = 85.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Corals" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 25.0
+margin_right = -2.0
+margin_bottom = -2.0
+script = ExtResource( 9 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Corals"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Node2D" parent="TabContainer/Corals/RichTextLabel"]
+position = Vector2( 0, -500 )
+
+[node name="Coral" type="Panel" parent="TabContainer/Corals/RichTextLabel/Control"]
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 299.0
+margin_bottom = 85.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headings" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/Coral"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.505882, 0, 1 )
+text = "Destructible Corals"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/Coral"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 21.0
+margin_right = -76.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "These Corals can be destroyed and they give you one extra point to use at you will."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coral3" parent="TabContainer/Corals/RichTextLabel/Control/Coral" instance=ExtResource( 10 )]
+position = Vector2( 249.196, 34.968 )
+
+[node name="Sprite" parent="TabContainer/Corals/RichTextLabel/Control/Coral/Coral3" index="0"]
+position = Vector2( -14.2589, -15.058 )
+scale = Vector2( 0.818278, 0.905679 )
+
+[node name="Healing Coral" type="Panel" parent="TabContainer/Corals/RichTextLabel/Control"]
+margin_left = 6.0
+margin_top = 96.0
+margin_right = 299.0
+margin_bottom = 211.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headings" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/Healing Coral"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.505882, 0, 1 )
+text = "Healing Corals"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/Healing Coral"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 78.0
+margin_top = 21.0
+margin_right = 2.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "These corals will help you survive a lot longer. Destroying them will give you an extra life but be aware it can exceed your max health."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealingCoral" parent="TabContainer/Corals/RichTextLabel/Control/Healing Coral" instance=ExtResource( 11 )]
+position = Vector2( 26.5, 62 )
+
+[node name="Sprite" parent="TabContainer/Corals/RichTextLabel/Control/Healing Coral/HealingCoral" index="0"]
+position = Vector2( -11.2, -19.9 )
+scale = Vector2( 0.875, 0.975 )
+
+[node name="Sea Urchin" type="Panel" parent="TabContainer/Corals/RichTextLabel/Control"]
+margin_left = 6.0
+margin_top = 222.0
+margin_right = 299.0
+margin_bottom = 301.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headings" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/Sea Urchin"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.505882, 0, 1 )
+text = "Sea Urchin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/Sea Urchin"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 21.0
+margin_right = -76.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "These are vicious spikes that damage you if you get too close. Mainly found in Urchin Reef."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spikes" parent="TabContainer/Corals/RichTextLabel/Control/Sea Urchin" instance=ExtResource( 4 )]
+position = Vector2( 255.499, 42.0373 )
+score = 0
+
+[node name="ClumpedYellowCoral" type="Panel" parent="TabContainer/Corals/RichTextLabel/Control"]
+margin_left = 6.0
+margin_top = 313.0
+margin_right = 299.0
+margin_bottom = 395.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headings" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/ClumpedYellowCoral"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.505882, 0, 1 )
+text = "Clumped Yellow Coral"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/ClumpedYellowCoral"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 103.0
+margin_top = 21.0
+margin_right = 27.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "These corals cannot be destroyed but are found throughout the ocean."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coral1" parent="TabContainer/Corals/RichTextLabel/Control/ClumpedYellowCoral" instance=ExtResource( 12 )]
+position = Vector2( 54.7091, 55.7756 )
+
+[node name="Bush" parent="TabContainer/Corals/RichTextLabel/Control/ClumpedYellowCoral/Coral1" index="0"]
+position = Vector2( -9.00545, -7.67568 )
+scale = Vector2( 0.667005, 0.595482 )
+
+[node name="BlueWavingCoral" type="Panel" parent="TabContainer/Corals/RichTextLabel/Control"]
+margin_left = 6.0
+margin_top = 407.0
+margin_right = 299.0
+margin_bottom = 491.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headings" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/BlueWavingCoral"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.505882, 0, 1 )
+text = "Blue Waving Corals"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/BlueWavingCoral"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 21.0
+margin_right = -71.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "These corals are also non destructible. You cannot move through them or destroy them."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coral2" parent="TabContainer/Corals/RichTextLabel/Control/BlueWavingCoral" instance=ExtResource( 13 )]
+position = Vector2( 248.082, 38.0305 )
+
+[node name="AnimatedSprite" parent="TabContainer/Corals/RichTextLabel/Control/BlueWavingCoral/Coral2" index="0"]
+position = Vector2( 3.648, 2.52554 )
+scale = Vector2( 0.696431, 0.819902 )
+frame = 3
+
+[node name="Weeds" type="Panel" parent="TabContainer/Corals/RichTextLabel/Control"]
+margin_left = 6.0
+margin_top = 502.0
+margin_right = 299.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Headings" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/Weeds"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.505882, 0, 1 )
+text = "Weeds"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="TabContainer/Corals/RichTextLabel/Control/Weeds"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 67.0
+margin_top = 21.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "These are found in groups almost everywhere. Same as before, can't be destructed or moved through."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Weed" parent="TabContainer/Corals/RichTextLabel/Control/Weeds" instance=ExtResource( 14 )]
+position = Vector2( 27.4724, 76.2551 )
+
+[node name="Bush" parent="TabContainer/Corals/RichTextLabel/Control/Weeds/Weed" index="0"]
+position = Vector2( 1.8771, -16.6191 )
+scale = Vector2( 1.0998, 1.11142 )
+frame = 3
+
+[node name="VScrollBar" type="VScrollBar" parent="TabContainer/Corals"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -12.0
+max_value = 520.0
+page = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeScene" parent="." instance=ExtResource( 15 )]
+margin_left = 271.47
+margin_top = 3.12246
+margin_right = 313.47
+margin_bottom = 22.1225
+text = "Close"
+scene = "res://Scenes/Instruction/CatalogueH.tscn"
+reset_score = false
+reset_global_score = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -8.478
+autoplay = true
+
+[editable path="TabContainer/Enemies/RichTextLabel/Control/Disco Fish/Fish1"]
+
+[editable path="TabContainer/Enemies/RichTextLabel/Control/Star Fish/StarFish"]
+
+[editable path="TabContainer/Enemies/RichTextLabel/Control/Octopus/Octopus"]
+
+[editable path="TabContainer/Enemies/RichTextLabel/Control/Shark/Shark"]
+
+[editable path="TabContainer/Corals/RichTextLabel/Control/Coral/Coral3"]
+
+[editable path="TabContainer/Corals/RichTextLabel/Control/Healing Coral/HealingCoral"]
+
+[editable path="TabContainer/Corals/RichTextLabel/Control/ClumpedYellowCoral/Coral1"]
+
+[editable path="TabContainer/Corals/RichTextLabel/Control/BlueWavingCoral/Coral2"]
+
+[editable path="TabContainer/Corals/RichTextLabel/Control/Weeds/Weed"]
+
+[editable path="ChangeScene"]

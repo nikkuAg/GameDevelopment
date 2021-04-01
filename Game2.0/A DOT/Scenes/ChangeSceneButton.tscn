@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/Audiowide/Audiowide-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/ChangeSceneButton.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[node name="ChangeScene" type="Button"]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0.905882, 1, 1 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 0, 1 )
+text = "HELLO"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="." to="." method="_on_ChangeScene_button_up"]

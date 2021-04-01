@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Characters/Fish/Fish1/2.png" type="Texture" id=1]
+[ext_resource path="res://Characters/Fish/Fish1/4.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/NormalFish.gd" type="Script" id=3]
+[ext_resource path="res://Characters/Fish/Fish1/3.png" type="Texture" id=4]
+[ext_resource path="res://Characters/Fish/Fish1/1.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/WanderControler.tscn" type="PackedScene" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 3.83231
+
+[node name="Fish2" type="KinematicBody2D"]
+collision_layer = 2147483664
+script = ExtResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.594601, -9.84461 )
+scale = Vector2( 0.653148, 0.515823 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+offset = Vector2( 0, -12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="WanderControler" parent="." instance=ExtResource( 9 )]

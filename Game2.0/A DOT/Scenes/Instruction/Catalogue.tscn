@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Fonts/Xanh_Mono/XanhMono-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/ChangeSceneButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Buttons/resume_Icon.png" type="Texture" id=3]
+[ext_resource path="res://Buttons/Enemy_Catalogue_Icon.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Music and Sounds/Tutorial.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[node name="Catalogue" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_horizontal_guides_": [ 180.418 ],
+"_edit_use_anchors_": false
+}
+
+[node name="Backgound" parent="." instance=ExtResource( 6 )]
+
+[node name="Label1" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 1 )
+text = "Remember that Enemies can also attack you!!
+Some Severely!!"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Catalogue" parent="." instance=ExtResource( 2 )]
+margin_left = 11.3244
+margin_top = 116.405
+margin_right = 157.324
+margin_bottom = 164.405
+text = "Catalogue"
+icon = ExtResource( 4 )
+expand_icon = true
+scene = "res://Scenes/Instruction/CatalogueList.tscn"
+reset_score = false
+reset_global_score = false
+
+[node name="Start" parent="." instance=ExtResource( 2 )]
+margin_left = 161.0
+margin_top = 117.0
+margin_right = 311.0
+margin_bottom = 164.0
+text = "Select Level"
+icon = ExtResource( 3 )
+expand_icon = true
+scene = "res://Scenes/LevelMenuEasy.tscn"
+reset_score = false
+reset_global_score = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -8.748
+autoplay = true

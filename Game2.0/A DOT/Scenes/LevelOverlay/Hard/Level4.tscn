@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Buttons/resume_Icon.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Buttons/shop_Icon.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Overlay.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ChangeScene.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Buttons/Enemy_Catalogue_Icon.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/ChangeSceneButton.tscn" type="PackedScene" id=7]
+
+[node name="World" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
+
+[node name="Label" parent="CanvasLayer" index="1"]
+margin_top = 16.0
+margin_bottom = 88.0
+text = "Level 4
+(THE BOSS LEVEL)"
+
+[node name="ChangeScene" parent="CanvasLayer" index="2"]
+margin_left = 202.0
+margin_top = 101.0
+margin_right = 293.0
+margin_bottom = 128.0
+text = "Play"
+icon = ExtResource( 1 )
+expand_icon = true
+scene = "res://Scenes/Levels/Hard/Level4.tscn"
+reset_global_score = false
+
+[node name="ChangeScene2" parent="CanvasLayer" index="3"]
+visible = false
+margin_left = 99840.0
+margin_top = 99910.0
+margin_right = 99944.0
+margin_bottom = 99946.0
+disabled = true
+reset_score = false
+reset_global_score = false
+
+[node name="Shop" parent="CanvasLayer" instance=ExtResource( 5 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -77.0
+margin_top = -26.0
+margin_right = 0.0
+margin_bottom = 54.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+expand = true
+scene = "res://Scenes/Shops/ShopHard4.tscn"
+reset_global_score = false
+
+[node name="ChangeScene3" parent="CanvasLayer" instance=ExtResource( 7 )]
+margin_left = 7.0
+margin_top = 97.0
+margin_right = 159.0
+margin_bottom = 131.0
+text = "Select Level"
+icon = ExtResource( 6 )
+expand_icon = true
+scene = "res://Scenes/LevelMenuHard.tscn"
+reset_score = false
+reset_global_score = false
+
+[editable path="CanvasLayer"]

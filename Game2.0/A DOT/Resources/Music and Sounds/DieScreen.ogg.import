@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DieScreen.ogg-d89827cdf65bcfc8c1f2cfddb9c430b6.oggstr"
+
+[deps]
+
+source_file="res://Resources/Music and Sounds/DieScreen.ogg"
+dest_files=[ "res://.import/DieScreen.ogg-d89827cdf65bcfc8c1f2cfddb9c430b6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

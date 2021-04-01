@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/ChangeScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Background/MainScreen.jpg" type="Texture" id=2]
+[ext_resource path="res://Fonts/Courgette/Courgette-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Buttons/Easy2.png" type="Texture" id=4]
+[ext_resource path="res://Buttons/hard1.png" type="Texture" id=5]
+[ext_resource path="res://Buttons/Easy1.png" type="Texture" id=6]
+[ext_resource path="res://Buttons/hard2.png" type="Texture" id=7]
+[ext_resource path="res://Buttons/Backi1.png" type="Texture" id=8]
+[ext_resource path="res://Buttons/backi2.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Music and Sounds/Main_Screen.ogg" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 3 )
+
+[node name="Play" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainScreen" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.33371
+margin_top = 1.33484
+margin_right = 0.33371
+margin_bottom = 1.33484
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Easy" parent="CanvasLayer" instance=ExtResource( 1 )]
+margin_left = 49.633
+margin_top = 132.0
+margin_right = 149.633
+margin_bottom = 169.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+expand = true
+scene = "res://Scenes/Instruction/SkipTutorial.tscn"
+reset_score = false
+reset_global_score = false
+
+[node name="Hard" parent="CanvasLayer" instance=ExtResource( 1 )]
+margin_left = 175.0
+margin_top = 130.0
+margin_right = 282.0
+margin_bottom = 171.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+expand = true
+scene = "res://Scenes/Instruction/SkipTutorialHard.tscn"
+reset_score = false
+reset_global_score = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_right = 1.0
+margin_left = 1.0
+margin_top = 47.0163
+margin_right = 1.0
+margin_bottom = 78.0163
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Select Difficulty"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeScene" parent="CanvasLayer" instance=ExtResource( 1 )]
+margin_left = 11.6541
+margin_top = 9.53516
+margin_right = 52.6541
+margin_bottom = 44.5352
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+expand = true
+scene = "res://Scenes/Main.tscn"
+reset_score = false
+reset_global_score = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.174
+autoplay = true

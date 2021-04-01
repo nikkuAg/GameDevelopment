@@ -1,0 +1,509 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scenes/Characters/SeaHorse.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/Fish2N.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Background.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Corals/HealingCoral.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/WallTile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Characters/Fish3N.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Corals/Coral2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Levels.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/portalH.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Corals/Coral1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Corals/Coral3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Corals/Weed.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Corals/Spikes.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Characters/Fish1.tscn" type="PackedScene" id=16]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallTile" parent="." instance=ExtResource( 5 )]
+tile_data = PoolIntArray( -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, 0, 1, 4, 1, 1, 196609, 2, 1, 196609, 3, 1, 196609, 4, 1, 196609, 5, 1, 196609, 6, 1, 196609, 7, 1, 196609, 8, 1, 196609, 9, 1, 196609, 10, 1, 196609, 11, 1, 196609, 12, 1, 196609, 13, 1, 196609, 14, 1, 196609, 15, 1, 196609, 16, 1, 196609, 17, 1, 6, 18, 1, 1, 19, 1, 1, 20, 1, 1, 21, 1, 5, 22, 1, 196609, 23, 1, 196609, 24, 1, 196609, 25, 1, 196609, 26, 1, 196609, 27, 1, 196609, 28, 1, 196609, 29, 1, 196609, 30, 1, 196609, 31, 1, 196609, 32, 1, 196609, 33, 1, 196609, 34, 1, 196609, 35, 1, 196609, 36, 1, 196609, 37, 1, 196609, 38, 1, 196609, 39, 1, 196609, 40, 1, 196609, 41, 1, 196609, 42, 1, 196609, 43, 1, 196609, 44, 1, 196609, 45, 1, 196609, 46, 1, 196609, 47, 1, 196609, 48, 1, 196609, 49, 1, 196609, 50, 1, 196609, 51, 1, 196609, 52, 1, 196609, 53, 1, 196609, 54, 1, 196609, 55, 1, 196609, 56, 1, 7, 131071, 0, 0, 65536, 1, 65539, 65553, 1, 131072, 65554, 1, 65542, 65555, 1, 65537, 65556, 1, 65541, 65557, 1, 131074, 65592, 1, 65539, 196607, 0, 0, 131072, 1, 65539, 131090, 1, 131072, 131091, 1, 65544, 131092, 1, 131074, 131128, 1, 65539, 262143, 0, 0, 196608, 1, 65539, 196627, 1, 131075, 196651, 1, 0, 196652, 1, 2, 196664, 1, 65539, 327679, 0, 0, 262144, 1, 65539, 262150, 1, 0, 262151, 1, 2, 262173, 1, 196608, 262174, 1, 196610, 262186, 1, 4, 262187, 1, 196614, 262188, 1, 196613, 262189, 1, 7, 262200, 1, 65539, 393215, 0, 0, 327680, 1, 65539, 327686, 1, 131072, 327687, 1, 131074, 327708, 1, 3, 327711, 1, 3, 327721, 1, 4, 327722, 1, 196615, 327725, 1, 196612, 327726, 1, 7, 327736, 1, 65539, 458751, 0, 0, 393216, 1, 65539, 393244, 1, 131075, 393247, 1, 131075, 393256, 1, 4, 393257, 1, 196615, 393262, 1, 196612, 393263, 1, 7, 393272, 1, 65539, 458752, 1, 65539, 458781, 1, 196608, 458782, 1, 196610, 458791, 1, 4, 458792, 1, 196615, 458799, 1, 196612, 458800, 1, 196609, 458801, 1, 7, 458804, 1, 4, 458805, 1, 196610, 458808, 1, 65539, 524288, 1, 262148, 524289, 1, 196609, 524290, 1, 196609, 524291, 1, 196610, 524296, 1, 196608, 524297, 1, 196609, 524298, 1, 196609, 524299, 1, 196609, 524300, 1, 7, 524307, 1, 3, 524326, 1, 4, 524327, 1, 196615, 524337, 1, 196612, 524338, 1, 196609, 524339, 1, 196609, 524340, 1, 196615, 524344, 1, 65539, 589824, 1, 65539, 589836, 1, 65539, 589842, 1, 0, 589843, 1, 131080, 589844, 1, 2, 589861, 1, 4, 589862, 1, 196615, 589880, 1, 65539, 655360, 1, 65539, 655372, 1, 65539, 655377, 1, 0, 655378, 1, 131078, 655379, 1, 65537, 655380, 1, 131077, 655381, 1, 2, 655397, 1, 65539, 655416, 1, 65539, 720896, 1, 196612, 720897, 1, 196609, 720898, 1, 196609, 720899, 1, 196609, 720900, 1, 196609, 720901, 1, 196609, 720902, 1, 196609, 720903, 1, 196609, 720904, 1, 196609, 720905, 1, 196609, 720906, 1, 196609, 720907, 1, 196609, 720908, 1, 196616, 720909, 1, 196609, 720910, 1, 196609, 720911, 1, 196609, 720912, 1, 196609, 720913, 1, 196614, 720914, 1, 131073, 720915, 1, 131073, 720916, 1, 131073, 720917, 1, 196613, 720918, 1, 196609, 720919, 1, 196609, 720920, 1, 196609, 720921, 1, 196609, 720922, 1, 196609, 720923, 1, 196609, 720924, 1, 196609, 720925, 1, 196609, 720926, 1, 196609, 720927, 1, 196609, 720928, 1, 196609, 720929, 1, 196609, 720930, 1, 196609, 720931, 1, 196609, 720932, 1, 196609, 720933, 1, 196616, 720934, 1, 196609, 720935, 1, 196609, 720936, 1, 196609, 720937, 1, 196609, 720938, 1, 196609, 720939, 1, 196609, 720940, 1, 196609, 720941, 1, 196609, 720942, 1, 196609, 720943, 1, 196609, 720944, 1, 196609, 720945, 1, 196609, 720946, 1, 196609, 720947, 1, 196609, 720948, 1, 196609, 720949, 1, 196609, 720950, 1, 196609, 720951, 1, 196609, 720952, 1, 196615 )
+
+[node name="Portal" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1300.53, 311.648 )
+max_score = 0
+star1 = 10
+star2 = 23
+star3 = 42
+change_scene = "res://Scenes/PictureScene/Hard/Level2.tscn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 128.226, 67.9337 )
+current = true
+limit_smoothed = true
+smoothing_enabled = true
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 128.226, 67.9337 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
+
+[node name="Enemy" type="YSort" parent="YSort"]
+
+[node name="Spikes" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 278.176, 174.917 )
+
+[node name="HitBox" parent="YSort/Enemy/Spikes" index="4"]
+damage = 2
+
+[node name="Spikes2" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 278.272, 143.315 )
+
+[node name="HitBox" parent="YSort/Enemy/Spikes2" index="4"]
+damage = 2
+
+[node name="Spikes3" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 241.191, 113.65 )
+
+[node name="HitBox" parent="YSort/Enemy/Spikes3" index="4"]
+damage = 2
+
+[node name="Spikes4" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 202.839, 112.758 )
+
+[node name="Spikes5" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 174.001, 142.191 )
+
+[node name="Spikes6" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 174.001, 174.299 )
+
+[node name="Spikes7" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 207.893, 206.408 )
+
+[node name="HitBox" parent="YSort/Enemy/Spikes7" index="4"]
+damage = 2
+
+[node name="Spikes8" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 246.245, 205.516 )
+
+[node name="Spikes9" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 1394.07, 170.198 )
+
+[node name="Spikes10" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 1548.24, 270.645 )
+
+[node name="Spikes11" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 1328.93, 146.158 )
+
+[node name="Spikes12" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 1564.66, 211.315 )
+
+[node name="Fish1" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 71.0349, 337.291 )
+
+[node name="Sprite" parent="YSort/Enemy/Fish1" index="0"]
+frame = 2
+
+[node name="Stats" parent="YSort/Enemy/Fish1" index="3"]
+max_health = 2
+
+[node name="Fish2" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 961.147, 113.921 )
+
+[node name="Stats" parent="YSort/Enemy/Fish2" index="3"]
+max_health = 2
+
+[node name="HitBox" parent="YSort/Enemy/Fish2" index="5"]
+damage = 2
+
+[node name="Fish3" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 960.025, 291.27 )
+
+[node name="Sprite" parent="YSort/Enemy/Fish3" index="0"]
+frame = 2
+
+[node name="Fish4" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 1359.72, 304.105 )
+
+[node name="Sprite" parent="YSort/Enemy/Fish4" index="0"]
+frame = 2
+
+[node name="Fish5" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 1717.94, 153.585 )
+
+[node name="Sprite" parent="YSort/Enemy/Fish5" index="0"]
+frame = 2
+
+[node name="Stats" parent="YSort/Enemy/Fish5" index="3"]
+max_health = 2
+
+[node name="HitBox" parent="YSort/Enemy/Fish5" index="5"]
+damage = 2
+
+[node name="Fish6" parent="YSort/Enemy" instance=ExtResource( 16 )]
+position = Vector2( 316.62, 329.826 )
+
+[node name="Corals" type="YSort" parent="YSort"]
+
+[node name="Coral1" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 222.094, 155.366 )
+
+[node name="Coral3" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 621.69, 241.796 )
+
+[node name="Coral4" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 623.935, 146.387 )
+
+[node name="Coral5" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 57.092, 242.918 )
+
+[node name="Coral6" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 66.6057, 233.405 )
+
+[node name="Coral14" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1118.64, 53.236 )
+
+[node name="Coral15" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1229.72, 245.588 )
+
+[node name="Coral17" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1405.39, 86.1982 )
+
+[node name="Coral18" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1521.56, 181.607 )
+
+[node name="Coral19" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1620.34, 247.015 )
+
+[node name="Coral16" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 1295.69, 180.341 )
+
+[node name="Coral7" parent="YSort/Corals" instance=ExtResource( 11 )]
+position = Vector2( 46.3891, 231.026 )
+
+[node name="Coral2" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 963.342, 187.741 )
+
+[node name="AnimatedSprite" parent="YSort/Corals/Coral2" index="0"]
+position = Vector2( 0.157435, 0.787447 )
+scale = Vector2( 0.786631, 0.843328 )
+
+[node name="Weed" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 52.7557, 58.368 )
+
+[node name="Weed2" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 44.8985, 79.6948 )
+
+[node name="Weed3" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 74.28, 78.8912 )
+
+[node name="Weed4" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 527.743, 347.295 )
+
+[node name="Weed5" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 560.112, 318.596 )
+
+[node name="Weed6" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 593.483, 283.557 )
+
+[node name="Weed7" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 654.219, 283.223 )
+
+[node name="Weed8" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 687.59, 314.258 )
+
+[node name="Weed10" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1326.79, 242.906 )
+
+[node name="Weed11" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1228.04, 349.906 )
+
+[node name="Weed12" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1228.54, 335.156 )
+
+[node name="Weed13" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 1244.79, 343.406 )
+
+[node name="Weed9" parent="YSort/Corals" instance=ExtResource( 13 )]
+position = Vector2( 720.824, 346.785 )
+
+[node name="Coral8" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 527.19, 41.3341 )
+
+[node name="Coral9" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 556.45, 67.7626 )
+
+[node name="Coral10" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 590.43, 104.574 )
+
+[node name="Coral11" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 663.108, 105.518 )
+
+[node name="Coral12" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 693.312, 69.6504 )
+
+[node name="Coral13" parent="YSort/Corals" instance=ExtResource( 7 )]
+position = Vector2( 725.404, 42.278 )
+
+[node name="HealingCoral" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 360.788, 331.284 )
+
+[node name="Coral20" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 615.134, 156.563 )
+
+[node name="Coral21" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 615.884, 174.563 )
+
+[node name="Coral22" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 615.384, 193.313 )
+
+[node name="Coral23" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 615.634, 213.563 )
+
+[node name="Coral24" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1191.15, 269.273 )
+
+[node name="Coral25" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1257.29, 204.387 )
+
+[node name="Coral26" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1353.18, 107.746 )
+
+[node name="Coral27" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1446.08, 106.997 )
+
+[node name="Coral28" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1478.64, 139.561 )
+
+[node name="Coral29" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1671.19, 204.688 )
+
+[node name="Coral30" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1700.92, 201.856 )
+
+[node name="Coral31" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1703.28, 261.32 )
+
+[node name="Coral32" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1481, 228.757 )
+
+[node name="Coral33" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1447.49, 196.193 )
+
+[node name="Coral34" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1532.99, 334.193 )
+
+[node name="Coral35" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1545.49, 333.693 )
+
+[node name="Coral36" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1539.99, 329.193 )
+
+[node name="Coral37" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1527.49, 330.693 )
+
+[node name="Coral38" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1551.52, 330.693 )
+
+[node name="Coral39" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1523.82, 335.532 )
+
+[node name="Coral40" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1539.51, 336.199 )
+
+[node name="Coral41" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1552.19, 335.532 )
+
+[node name="Coral42" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1558.7, 332.528 )
+
+[node name="Coral43" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1566.37, 335.532 )
+
+[node name="Coral44" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1568.87, 331.527 )
+
+[node name="Coral45" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1559.53, 326.522 )
+
+[node name="Coral46" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1548.35, 326.021 )
+
+[node name="HealingCoral3" parent="YSort/Corals" instance=ExtResource( 4 )]
+position = Vector2( 1162.02, 308.92 )
+
+[node name="Spikes" parent="YSort/Corals" instance=ExtResource( 14 )]
+position = Vector2( 1426.11, 170.129 )
+
+[node name="Coral47" parent="YSort/Corals" instance=ExtResource( 12 )]
+position = Vector2( 1541.17, 323.99 )
+
+[node name="NormalFishes" type="YSort" parent="YSort"]
+
+[node name="Fish2" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 73.5391, 314.663 )
+WanderRange = 10
+
+[node name="Fish4" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 154.149, 339.411 )
+WanderRange = 10
+
+[node name="Fish5" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 335.876, 316.077 )
+WanderRange = 10
+
+[node name="Fish6" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 712.764, 252.437 )
+WanderRange = 10
+
+[node name="Fish7" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 264.458, 342.947 )
+WanderRange = 10
+
+[node name="Fish8" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 482.954, 65.0538 )
+WanderRange = 10
+
+[node name="Fish9" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 398.101, 124.451 )
+WanderRange = 10
+
+[node name="Fish10" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 764.364, 83.5724 )
+WanderRange = 10
+
+[node name="Fish11" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 1084.7, 325.269 )
+WanderRange = 10
+
+[node name="Fish12" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 1595.23, 77.7818 )
+WanderRange = 10
+
+[node name="Fish3" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 485.075, 220.617 )
+WanderRange = 10
+
+[node name="Fish13" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 452.548, 315.37 )
+WanderRange = 10
+
+[node name="Fish14" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 561.443, 125.865 )
+WanderRange = 10
+
+[node name="Fish15" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 748.119, 306.884 )
+WanderRange = 10
+
+[node name="Fish16" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 821.658, 179.605 )
+WanderRange = 10
+
+[node name="Fish17" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 1029.55, 66.468 )
+WanderRange = 10
+
+[node name="Fish18" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 1200.67, 175.362 )
+WanderRange = 10
+
+[node name="Fish19" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 1411.39, 65.761 )
+WanderRange = 10
+
+[node name="Fish20" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 73.5392, 123.037 )
+WanderRange = 10
+
+[node name="Fish21" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 1612.2, 185.262 )
+WanderRange = 10
+
+[node name="Fish22" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 1421.55, 277.915 )
+WanderRange = 10
+
+[node name="Fish23" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 349.578, 193.718 )
+WanderRange = 10
+
+[node name="Fish24" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 1245.58, 65.7184 )
+WanderRange = 10
+
+[node name="Fish25" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 1069.58, 173.718 )
+WanderRange = 10
+
+[node name="Fish26" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 707.578, 137.718 )
+WanderRange = 10
+
+[node name="Fish27" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 811.578, 275.718 )
+WanderRange = 10
+
+[node name="Fish28" parent="YSort/NormalFishes" instance=ExtResource( 6 )]
+position = Vector2( 1625.58, 315.718 )
+WanderRange = 10
+
+[node name="Fish29" parent="YSort/NormalFishes" instance=ExtResource( 2 )]
+position = Vector2( 1739.58, 309.718 )
+WanderRange = 10
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource( 8 )]
+
+[node name="Retry" parent="CanvasLayer/UI/ColorRect" index="2"]
+scene = "res://Scenes/LevelOverlay/Hard/Level1.tscn"
+reset_global_score = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "H"
+
+[editable path="YSort/Enemy/Spikes"]
+
+[editable path="YSort/Enemy/Spikes2"]
+
+[editable path="YSort/Enemy/Spikes3"]
+
+[editable path="YSort/Enemy/Spikes7"]
+
+[editable path="YSort/Enemy/Fish1"]
+
+[editable path="YSort/Enemy/Fish1/PlayerDetection"]
+
+[editable path="YSort/Enemy/Fish2"]
+
+[editable path="YSort/Enemy/Fish3"]
+
+[editable path="YSort/Enemy/Fish4"]
+
+[editable path="YSort/Enemy/Fish4/PlayerDetection"]
+
+[editable path="YSort/Enemy/Fish5"]
+
+[editable path="YSort/Corals/Coral2"]
+
+[editable path="CanvasLayer/UI"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Characters/Corals/Weed/1.png" type="Texture" id=1]
+[ext_resource path="res://Characters/Corals/Weed/2.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Corals/Weed/3.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Corals/Weed/4.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.5
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.40201
+height = 13.1511
+
+[node name="Weed" type="StaticBody2D"]
+
+[node name="Bush" type="AnimatedSprite" parent="."]
+position = Vector2( -0.929071, -11.0068 )
+scale = Vector2( 0.547773, 0.489745 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.22737, -4.95628 )
+rotation = -1.5708
+shape = SubResource( 2 )

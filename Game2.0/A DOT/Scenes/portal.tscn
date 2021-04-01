@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Portal/4.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/portal.gd" type="Script" id=2]
+[ext_resource path="res://Portal/1.png" type="Texture" id=3]
+[ext_resource path="res://Portal/2.png" type="Texture" id=4]
+[ext_resource path="res://Portal/5.png" type="Texture" id=5]
+[ext_resource path="res://Portal/3.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 34.8547
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "change_Scene"
+} ]
+}
+
+[node name="Portal" type="Area2D"]
+scale = Vector2( 0.375, 0.375 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Portal" type="AnimatedSprite" parent="."]
+position = Vector2( 0.522004, 0.951019 )
+scale = Vector2( 0.806676, 0.729697 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.529734, 0 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade = SubResource( 3 )
+[connection signal="body_entered" from="." to="." method="_on_icon_body_entered"]

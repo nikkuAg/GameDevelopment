@@ -1,0 +1,73 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Characters/Corals/Spikes/1.png" type="Texture" id=1]
+[ext_resource path="res://Characters/Corals/Spikes/6.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Corals/Spikes/5.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Corals/Spikes/3.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Stats.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/StartFish.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/HitBox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/HurtBox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Characters/Corals/Spikes/4.png" type="Texture" id=9]
+[ext_resource path="res://Characters/Corals/Spikes/2.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 0.01
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 9.89206
+height = 12.5561
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 8.87948
+height = 11.2963
+
+[node name="Spikes" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource( 6 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 1 )
+offset = Vector2( 0, -12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="HurtBox" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0.140308, 0.140308 )
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( -0.618823, -1.38375 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="Stats" parent="." instance=ExtResource( 5 )]
+max_health = 2
+
+[node name="HitBox" parent="." instance=ExtResource( 7 )]
+collision_layer = 2147483648
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+modulate = Color( 1, 1, 1, 0.47451 )
+position = Vector2( -0.662888, -1.11726 )
+rotation = 1.5708
+shape = SubResource( 4 )
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+
+[editable path="HurtBox"]
+
+[editable path="HitBox"]

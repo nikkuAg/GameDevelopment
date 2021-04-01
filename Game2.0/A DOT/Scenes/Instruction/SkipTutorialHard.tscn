@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Xanh_Mono/XanhMono-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Overlay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Music and Sounds/Tutorial.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[node name="Instruction" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_horizontal_guides_": [ 180.418 ],
+"_edit_use_anchors_": false
+}
+
+[node name="World" parent="." instance=ExtResource( 5 )]
+
+[node name="Label1" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 10.0
+margin_right = -6.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 1 )
+text = "Use Arrow keys or WAsd to move the SeaHorse"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 2 )]
+
+[node name="Label" parent="CanvasLayer" index="1"]
+margin_top = 20.0
+margin_bottom = 92.0
+text = "Tutorials"
+
+[node name="ChangeScene" parent="CanvasLayer" index="2"]
+margin_left = 39.5703
+margin_top = 124.827
+margin_right = 143.57
+margin_bottom = 160.828
+text = "Skip"
+scene = "res://Scenes/Instruction/CatalogueH.tscn"
+
+[node name="ChangeScene2" parent="CanvasLayer" index="3"]
+margin_left = 193.624
+margin_top = 124.407
+margin_right = 297.624
+margin_bottom = 160.407
+text = "Continue"
+scene = "res://Scenes/Instruction/MovementH.tscn"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -8.478
+autoplay = true
+
+[editable path="CanvasLayer"]
